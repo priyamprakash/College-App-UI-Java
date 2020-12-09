@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/CE"
+        android:title="CE"
+        />
+    <item
+        android:id="@+id/ME"
+        android:title="ME"
+        />
+    <item
+        android:id="@+id/EC"
+        android:title="EC"
+        />
+    <item
+        android:id="@+id/IT"
+        android:title="IT"
+        />
+    <item
+        android:id="@+id/EE"
+        android:title="EE"
+        />
+   <item
+        android:id="@+id/LT"
+        android:title="LT"
+        />
+ <item
+        android:id="@+id/BP"
+        android:title="B.Ph"
+        />
+ <item
+        android:id="@+id/A.Sc"
+        android:title="A.Sc"
+        />
+
+
+
+
+
+</menu>

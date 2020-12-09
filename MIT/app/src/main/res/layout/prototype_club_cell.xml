@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:scrollbars="none"
+    android:id="@+id/scroll_it"
+    android:background="@color/neomorph_background_color"
+    >
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:neomorph_view_type="rectangular"
+        app:neomorph_shadow_type="outer"
+        android:elevation="15dp"
+        app:neomorph_background_color="@color/neomorph_background_color"
+        app:neomorph_shadow_color="#817A7A"
+        app:neomorph_highlight_color="@color/neomorph_shadow_color"
+        android:layout_centerHorizontal="true"
+        android:padding="4dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:scaleType="fitCenter"
+            android:layout_height="160dp"
+            android:layout_width="160dp"
+            android:background="@color/neomorph_background_color"
+
+
+            />
+
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+</androidx.cardview.widget.CardView>

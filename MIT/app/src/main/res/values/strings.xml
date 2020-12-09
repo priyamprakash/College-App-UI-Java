@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MIT</string>
+    <string name="todo" />
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_fragment">Home fragment</string>
+    <string name="java_fragment">Java fragment</string>
+    <string name="android_fragment">Android fragment</string>
+    <string name="php_fragment">Php fragment</string>
+</resources>

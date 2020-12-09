@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AboutMIT.About">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/container"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="-10dp"
+            android:src="@drawable/mit_pic" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <include layout="@layout/left_nav" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:id="@+id/mvh"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/normal"
+                            android:text="Vision"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/normal"
+                            android:text="To serve the nation and society by providing skilled and well developed human resource through excellence in technical education and research.\n"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/normal"
+                            android:text="Mission"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/normal"
+                            android:text="To provide state of the art undergraduate and postgraduate programs to bright students for overall development.\n\nTo promote leadership and professionalism among the students and faculty by providing right ambience.\n\nTo encourage the innovation and research by undertaking project and developmental activities with industries, institutions and government\n"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/normal"
+                            android:text="History"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/normal"
+                            android:text="After the slavery of nearly two centuries when our country got independence, our economy was in wretched position. The builders of the nation realized the necessity of rapid industrialization of the country. For boosting it, facilities for technical education was essential and hence engineering institutions started coming up throughout the country in fifties.
+M.I.T. came into existence on 25th September 1954, just seven years after independence of India. It was inaugurated by Sri C.P.N. Sinha, then governor of East Punjab. Initially it was started with Civil Engineering descipline with a batch of 45 students as 1954-55 batch with the name \‘College of Civil Engineering, Muzaffarpur\’.On 21st April 1956 the first prime minister of India Pd. Jawaharlal Nehru laid down the foundation stone of main building. Electrical &amp; Mechanical Engineering branches were added from session 1960-61 and the institute was renamed as Muzaffarpur Institute of Technology. Pharmacy and Leather Technology were added in 1978 and 1986 respectively. Information Technology and Electronics and Communication Engineering disciplines were introduced in 2001.\n"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="14sp" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/normal"
+                            android:text="Visit Us"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/normal"
+                            android:text="This Institute is located at the north-west corner of the Muzaffarpur city along Muzaffarpur- Motihari road, spread over an area of 55 acres at a distance of about 4 kilometers from Muzaffarpur junction. The institute is flanked by the holy river “Boorhi Gandak” on north, a quite big water reservoir on the east, Muzaffarpur-Motihari road on south and local road network on west.\n"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
+</LinearLayout>

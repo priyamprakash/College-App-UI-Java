@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="2dp"
+        app:cardPreventCornerOverlap="true"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/royal_blue"
+            android:id="@+id/notifyLayout"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/text_view_date_time1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/notify_date"
+                android:text="Friday, 4 April, 2020"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textSize="14dp"
+                android:visibility="gone"
+                android:fontFamily="@font/normal"
+                android:textColor="@color/dark_yellow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/notify_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="2dp"
+                android:visibility="visible"
+                android:text="Friday, 4 Dec, 2020"
+                android:textColor="@color/dark_yellow"
+                android:fontFamily="@font/normal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/notify_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/notify_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@id/notify_date"
+                android:ellipsize="end"
+                android:maxWidth="280dp"
+                android:maxLines="1"
+                android:textColor="@color/dark_yellow"
+                android:fontFamily="@font/bold"
+                android:text="Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.003"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <me.biubiubiu.justifytext.library.JustifyTextView
+                android:id="@+id/notify_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/notify_title"
+                android:layout_marginEnd="8dp"
+                android:drawablePadding="15dp"
+                android:fontFamily="@font/normal"
+                android:ellipsize="end"
+                android:maxWidth="280dp"
+                android:maxLines="3"
+                android:text="Description of the notification to be added here by the us later as we proceed the development task "
+                android:textColor="#fff"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/text_view_date_time1"
+                app:layout_constraintHorizontal_bias="0.003"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/notify_title"
+                app:layout_constraintVertical_bias="0.625" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
