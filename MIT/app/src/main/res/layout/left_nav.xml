@@ -9,8 +9,6 @@
         android:layout_height="wrap_content"
         android:background="@drawable/side_cut_yellow"
         android:orientation="vertical"
-
-
         >
 
         <TextView
