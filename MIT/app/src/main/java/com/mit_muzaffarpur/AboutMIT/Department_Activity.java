@@ -47,7 +47,7 @@ public class Department_Activity extends AppCompatActivity {
 //                        fragment = new AndroidFragment();
                         break;
                     case 3:
-                        fragment = new Fragment_php();
+                        fragment = new Fragment_two();
                         break;
                 }
                 FragmentManager fm = getSupportFragmentManager();
