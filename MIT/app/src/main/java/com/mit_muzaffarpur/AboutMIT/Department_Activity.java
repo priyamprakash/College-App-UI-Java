@@ -25,7 +25,7 @@ public class Department_Activity extends AppCompatActivity {
         tabLayout=(TabLayout)findViewById(R.id.tabLayout);
         frameLayout=(FrameLayout)findViewById(R.id.frameLayout);
 
-        fragment = new HomeFragment();
+        fragment = new Fragment_one();
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout, fragment);
@@ -38,7 +38,7 @@ public class Department_Activity extends AppCompatActivity {
                 // Fragment fragment = null;
                 switch (tab.getPosition()) {
                     case 0:
-                        fragment = new HomeFragment();
+                        fragment = new Fragment_one();
                         break;
                     case 1:
 //                        fragment = new JavaFragment();
