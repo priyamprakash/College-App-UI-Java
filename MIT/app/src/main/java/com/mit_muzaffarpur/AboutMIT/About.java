@@ -20,7 +20,6 @@ public class About extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
         TextView alumini = findViewById(R.id.alumini);
-
         alumini.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,4 +39,5 @@ public class About extends AppCompatActivity {
         startActivity(intent);
 
     }
+
 }

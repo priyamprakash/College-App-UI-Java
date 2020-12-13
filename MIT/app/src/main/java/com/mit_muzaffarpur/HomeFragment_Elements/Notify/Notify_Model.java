@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.Home.Notify;
+package com.mit_muzaffarpur.HomeFragment_Elements.Notify;
 
 public class Notify_Model {
     private String Title , Date , description;

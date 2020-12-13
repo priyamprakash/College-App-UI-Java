@@ -2,11 +2,13 @@
 <resources>
     <string-array name="id_activityScreenTitles">
         <item>About MIT</item>
+        <item>Home</item>
         <item>Profile</item>
         <item>Department</item>
-        <item>Settings</item>
         <item>App info</item>
         <item>Logout</item>
+
+
 
 
     </string-array>

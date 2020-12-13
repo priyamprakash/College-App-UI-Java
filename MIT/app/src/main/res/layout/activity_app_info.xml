@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_app"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".AppInfo">
+
+<View
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B3FFFFFF"
+
+   />
+    <TextView
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This ,not the TPO one, is the OFFICIAL app of Mit Muzaffarpur .\n\n\nDevelopers:\nNITISH SHRIVASTAV\nPP\n...."
+        android:fontFamily="@font/normal"
+        android:textSize="14dp"
+        android:textColor="@color/colorPrimaryDark"
+
+        />
+
+
+
+</RelativeLayout>
