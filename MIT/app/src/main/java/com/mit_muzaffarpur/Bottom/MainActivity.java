@@ -14,6 +14,7 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
@@ -37,12 +38,12 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
     private final static int ID_HOME=1;
     private final static int ID_LOGIN=2;
     private final static int ID_ABOUT=3;
-
+//---------------------------------------------------
     private static final int POS_DASHBOARD = 0;
     private static final int POS_ABOUT = 1;
-    private static final int DEPARTMENT = 4;
-    private static final int POS_EVENTS = 3;
     private static final int POS_APP_INFO = 2;
+    private static final int DEPARTMENT = 3;
+    private static final int POS_PROFILE = 4;
     private static final int POS_LOGOUT = 5;
     private String[] screenTitles;
     private Drawable[] screenIcons;
@@ -61,10 +62,10 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
         Toolbar toolbar;
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
+//        getSupportActionBar().setTitle("MIT ");
+//        getSupportActionBar().setSubtitle("Muzaffarpur");
 
-
-        /**Bloody navigation drawer
+        /**Navigation drawer
          */
 
         slidingRootNav = new SlidingRootNavBuilder(this)
@@ -80,13 +81,13 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
 
         screenIcons = loadScreenIcons();
         screenTitles = loadScreenTitles();
-//        color(R.color.colorAccent);
+//        color(R.color.white);
 
         Drawer_Adapter drawer_adapter = new Drawer_Adapter(Arrays.asList(
                 createItemFor(POS_ABOUT),
                 createItemFor(POS_DASHBOARD).setChecked(true),
                 createItemFor(DEPARTMENT),
-                createItemFor(POS_EVENTS),
+                createItemFor(POS_PROFILE),
                 createItemFor(POS_APP_INFO),
                 new SpaceItem(260),
                 createItemFor(POS_LOGOUT)));
@@ -189,21 +190,20 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
         }
 
 
-        if(position == POS_EVENTS)
+        if(position == POS_APP_INFO)
         {
-            Toast.makeText(getApplicationContext(), "User Profile",
-                    Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(getBaseContext(), AppInfo.class);
+            startActivity(intent);
         }
         if (position == DEPARTMENT) {
             Toast.makeText(getApplicationContext(), "Sare Branch ka detail",
                     Toast.LENGTH_LONG).show();
 
         }
-
-        if(position == POS_APP_INFO)
+        if(position == POS_PROFILE)
         {
-            Intent intent = new Intent(getBaseContext(), AppInfo.class);
-            startActivity(intent);
+            Toast.makeText(getApplicationContext(), "User Profile",
+                    Toast.LENGTH_LONG).show();
         }
         if (position == POS_LOGOUT) {
             finish();

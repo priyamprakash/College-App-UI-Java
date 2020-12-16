@@ -36,6 +36,7 @@ public class PostAdapter extends FirebaseRecyclerAdapter<Post, PostAdapter.PostV
         holder.description.setText(description);
         holder.author.setText(post.getAuthor());
 
+
         Log.d(TAG, "onBindViewHolder: " + holder.title.getText());
 
     }

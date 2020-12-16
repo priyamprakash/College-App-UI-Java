@@ -8,7 +8,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/neomorph_background_color"
+        android:background="@color/white"
         android:padding="10dp"
         android:scrollbars="none"
         android:orientation="vertical"
@@ -104,6 +104,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    />
+
+
+                <TextView
+                    android:layout_marginVertical="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CLUBS"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:fontFamily="@font/bold"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:background="@color/white"
+                    android:id="@+id/recyclerViewClubs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     />
 
 

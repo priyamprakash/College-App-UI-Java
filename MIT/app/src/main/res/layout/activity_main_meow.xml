@@ -4,14 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Bottom.MainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
-        app:titleTextColor="@color/dark_yellow"
+        app:titleTextColor="@color/colorPrimaryDark"
+        app:titleTextAppearance="@font/normal"
+        app:subtitleTextColor="@color/colorPrimaryDark"
+        app:subtitleTextAppearance="@font/normal"
+        app:navigationIcon="@drawable/ic_baseline_toc_24"
+
+
 
         />
     <FrameLayout
@@ -22,6 +31,7 @@
 
         />
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:layout_marginHorizontal="15dp"
         android:id="@+id/bottom_nav"
         android:background="#00000000"
         android:layout_width="match_parent"
@@ -31,6 +41,5 @@
         app:mbn_countBackgroundColor="#ff6f00"
         app:mbn_defaultIconColor="@color/white"
         app:mbn_selectedIconColor="@color/colorPrimaryDark"
-
         />
 </RelativeLayout>
