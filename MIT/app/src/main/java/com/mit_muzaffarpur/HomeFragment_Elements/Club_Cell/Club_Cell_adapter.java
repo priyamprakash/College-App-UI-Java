@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.mit_muzaffarpur.ClubActivity;
+import com.mit_muzaffarpur.ClubProfile.ClubActivity;
 import com.mit_muzaffarpur.R;
 
 import java.util.List;
@@ -32,6 +32,7 @@ public class Club_Cell_adapter extends RecyclerView.Adapter<Club_Cell_adapter.Fo
         this.mCtx = mCtx;
         this.clubList = clubList;
     }
+
 
     @Override
     public FounderViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

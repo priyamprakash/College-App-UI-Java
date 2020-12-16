@@ -2,38 +2,36 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/CE"
-        android:title="CE"
+        android:id="@+id/nav_acievements"
+        android:icon="@drawable/ic_baseline_dashboard_24"
+        android:title="home"
         />
     <item
-        android:id="@+id/ME"
-        android:title="ME"
+        android:id="@+id/nav_announcements"
+        android:icon="@drawable/ic_baseline_dashboard_24"
+        android:title=""
         />
     <item
-        android:id="@+id/EC"
-        android:title="EC"
+        android:id="@+id/nav_events"
+        android:icon="@drawable/ic_baseline_dashboard_24"
+        android:title=""
         />
     <item
-        android:id="@+id/IT"
-        android:title="IT"
+        android:id="@+id/nav_members"
+        android:icon="@drawable/ic_baseline_dashboard_24"
+        android:title=""
         />
     <item
-        android:id="@+id/EE"
-        android:title="EE"
-        />
-   <item
-        android:id="@+id/LT"
-        android:title="LT"
-        />
- <item
-        android:id="@+id/BP"
-        android:title="B.Ph"
-        />
- <item
-        android:id="@+id/A.Sc"
-        android:title="A.Sc"
+        android:id="@+id/nav_fests"
+        android:icon="@drawable/ic_baseline_dashboard_24"
+        android:title=""
         />
 
+    <item
+        android:id="@+id/nav_upates"
+        android:icon="@drawable/ic_baseline_dashboard_24"
+        android:title=""
+        />
 
 
 

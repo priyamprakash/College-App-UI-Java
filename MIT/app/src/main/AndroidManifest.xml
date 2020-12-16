@@ -14,17 +14,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".AppInfo"></activity>
-        <activity android:name=".ClubActivity" />
+        <activity android:name=".ClubProfile.ClubActivity" />
         <activity android:name=".Bottom.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".AboutMIT.Department_Activity" />
         <activity android:name=".Website" />
         <activity android:name=".AboutMIT.About"/>
+
     </application>
 
 </manifest>

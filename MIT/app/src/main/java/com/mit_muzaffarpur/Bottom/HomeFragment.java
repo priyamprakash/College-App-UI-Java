@@ -1,18 +1,21 @@
 package com.mit_muzaffarpur.Bottom;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.FirebaseDatabase;
 import com.mit_muzaffarpur.HomeFragment_Elements.Club_Cell.Club_Cell_Model;
 import com.mit_muzaffarpur.HomeFragment_Elements.Club_Cell.Club_Cell_adapter;
 import com.mit_muzaffarpur.HomeFragment_Elements.Notify.Notify_Adapter;
@@ -24,14 +27,16 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import static android.content.ContentValues.TAG;
+@Keep
 public class HomeFragment extends Fragment {
 
-    //a list to store all the products
+  private RecyclerView recyclerViewClubs;
+  private ClubAdapter clubAdapter;
+
     List<Notify_Model> notifyList;
     List<Club_Cell_Model> clubList;
-    //    List<Youtube_Model> ytList;
-    RecyclerView recyclerView_notify, recyclerView, recyclerView_cell , recyclerView_yt;
-    RecyclerView.LayoutManager layoutManager_club;
+    RecyclerView recyclerView_notify;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -78,98 +83,43 @@ public class HomeFragment extends Fragment {
         Notify_Adapter notify_Adapter = new Notify_Adapter(getContext(), notifyList);
         recyclerView_notify.setAdapter(notify_Adapter);
 
-        /**
-         * Clubs adapter
-         */
-
-        recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
-        LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
-        mLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        recyclerView.setLayoutManager(mLayoutManager);
-
-        recyclerView.setHasFixedSize(true);
-        clubList = new ArrayList<>();
-        clubList.add(
-                new Club_Cell_Model(
-                        "junoon",
-                        "The Arts & Cultural Club",
-                        "Achha sa description to be added here",
-                        1,
-                        "",
-                        R.drawable.junoon_logo));
-        clubList.add(
-                new Club_Cell_Model(
-                        "moxie",
-                        "The Technical Club",
-                        "Achha sa description to be added here",
-                        2,
-                        "",
-                        R.drawable.moxie_logo));
-        clubList.add(
-                new Club_Cell_Model(
-                        "udgam",
-                        "The sports Club",
-                        "Achha sa description to be added here",
-                        3,
-                        "",
-                        R.drawable.udgam_logo));
-        //creating recyclerview ka adapter
-        Club_Cell_adapter club_Cell_adapter = new Club_Cell_adapter(getContext(), clubList);
-        recyclerView.setAdapter(club_Cell_adapter);
-
-        /**
-         * Cells adapter
-         */
-
-        recyclerView_cell = (RecyclerView) rootView.findViewById(R.id.recyclerView_cell);
-        LinearLayoutManager cell_layout_manager = new LinearLayoutManager(getContext());
-        cell_layout_manager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        recyclerView_cell.setLayoutManager(cell_layout_manager);
-
-        recyclerView_cell.setHasFixedSize(true);
-        clubList = new ArrayList<>();
-        clubList.add(
-                new Club_Cell_Model(
-                        "startup",
-                        "Startup - need of the generation",
-                        "Achha sa description to be added here",
-                        1,
-                        "",
-                        R.drawable.startup_cell_logo));
-        clubList.add(
-                new Club_Cell_Model(
-                        "innovation",
-                        "Startup - need of the generation",
-                        "Achha sa description to be added here",
-                        2,
-                        "",
-                        R.drawable.moxie_logo));
-        clubList.add(
-                new Club_Cell_Model(
-                        "placement",
-                        "Startup - need of the generation",
-                        "Achha sa description to be added here",
-                        3,
-                        "",
-                        R.drawable.udgam_logo));
-        //creating recyclerview ka adapter
-        Club_Cell_adapter cell_adapter = new Club_Cell_adapter(getContext(), clubList);
-        recyclerView_cell.setAdapter(cell_adapter);
 
 
-        /**
-         * Youtube adapter
-         */
 
-        recyclerView_yt = (RecyclerView) rootView.findViewById(R.id.recyclerView_youtube);
-        LinearLayoutManager yt_layout_manager = new LinearLayoutManager(getContext());
-        yt_layout_manager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        recyclerView_yt.setLayoutManager(yt_layout_manager);
+//Experiment
+      LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+      recyclerViewClubs  = rootView.findViewById(R.id.recyclerViewClubs);
+      linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+      recyclerViewClubs.setLayoutManager(linearLayoutManager);
 
-        recyclerView_yt.setHasFixedSize(true);
+
+      FirebaseRecyclerOptions<ClubModel> options =
+              new FirebaseRecyclerOptions.Builder<ClubModel>()
+                      .setQuery(FirebaseDatabase
+                                      .getInstance().getReference().child("clubs"),
+                              ClubModel.class).build();
+
+
+      clubAdapter = new ClubAdapter(options);
+      recyclerViewClubs.setAdapter(clubAdapter);
+      Log.d(TAG, "onCreate: adapter "+ clubAdapter);
 
     return  rootView;
     }
+  //to start
+  @Override
+  public void onStart() {
+    super.onStart();
+    clubAdapter.startListening();
+  }
+
+  //to stop
+  @Override
+  public void onStop() {
+    super.onStop();
+    clubAdapter.stopListening();
+  }
+
 
 
 

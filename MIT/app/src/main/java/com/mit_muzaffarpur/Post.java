@@ -4,6 +4,7 @@ import androidx.annotation.Keep;
 
 @Keep
 public class Post {
+    String clubImage;
     String title;
     String description;
     String author;
@@ -18,6 +19,7 @@ public class Post {
                 "title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", author='" + author + '\'' +
+                ", clubImage='" +clubImage +'\'' +
                 '}';
     }
 
@@ -28,6 +30,14 @@ public class Post {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getClubImage() {
+        return clubImage;
+    }
+
+    public void setClubImage(String clubImage) {
+        this.clubImage = clubImage;
     }
 
     public String getDescription() {
