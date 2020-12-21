@@ -1,7 +1,5 @@
 package com.mit_muzaffarpur.ClubProfile;
 
-import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +27,7 @@ public class AnnouncementAdapter extends FirebaseRecyclerAdapter<AnnouncementMod
     @Override
     protected void onBindViewHolder(@NonNull AnnouncementAdapter.AnnouncementViewHolder holder, int position, @NonNull AnnouncementModel model) {
 
-        holder.message.setText(model.getAnnouncementMessage()+"\n");
+        holder.message.setText(model.getAnnouncementMessage());
         holder.timestamp.setText(model.getAnnouncementTimestamp());
         holder.title.setText(model.getAnnouncementTitle());
 
