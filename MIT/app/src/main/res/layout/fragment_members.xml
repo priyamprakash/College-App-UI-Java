@@ -3,20 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     tools:context=".ClubProfile.FragmentMembers">
 
-    <!-- TODO: Update blank fragment layout -->
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Members" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="yo"
+
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:background="@color/white"
+        android:id="@+id/recyclerViewMembers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
         <Button
+            android:id="@+id/faculties"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -63,4 +78,7 @@
 
     </LinearLayout>
 
+
+
+</LinearLayout>
 </FrameLayout>

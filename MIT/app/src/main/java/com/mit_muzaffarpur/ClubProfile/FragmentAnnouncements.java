@@ -28,6 +28,7 @@ public class FragmentAnnouncements extends Fragment {
 
     private RecyclerView recyclerViewAnnouncements;
     private AnnouncementAdapter announcementAdapter;
+
   public FragmentAnnouncements() {
         // Required empty public constructor
     }
@@ -52,14 +53,18 @@ public class FragmentAnnouncements extends Fragment {
         recyclerViewAnnouncements.setLayoutManager(linearLayoutManager);
 
 
-        FirebaseRecyclerOptions<AnnouncementModel> options =
-                new FirebaseRecyclerOptions.Builder<AnnouncementModel>()
-                        .setQuery(FirebaseDatabase
-                                        .getInstance().getReference().child("clubs").child(clubId).child("clubAnnouncements"),
-                                AnnouncementModel.class).build();
 
-        announcementAdapter = new AnnouncementAdapter(options);
-        recyclerViewAnnouncements.setAdapter(announcementAdapter);
+    FirebaseRecyclerOptions<AnnouncementModel> options =
+            new FirebaseRecyclerOptions.Builder<AnnouncementModel>()
+                    .setQuery(FirebaseDatabase
+                                    .getInstance().getReference().child("clubs").child(clubId).child("clubAnnouncements"),
+                            AnnouncementModel.class).build();
+
+
+    announcementAdapter = new AnnouncementAdapter(options);
+    recyclerViewAnnouncements.setAdapter(announcementAdapter);
+
+
 
       return rootView;
 
