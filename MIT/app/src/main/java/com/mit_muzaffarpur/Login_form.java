@@ -148,12 +148,12 @@ accessTokenTracker= new AccessTokenTracker() {
         btnSignOut = findViewById(R.id.sign_out_button);
 
         // Configure Google Sign In
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                 .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+//        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//                 .requestIdToken(getString(R.string.default_web_client_id))
+//                .requestEmail()
+//                .build();
+//
+//        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -293,7 +293,7 @@ accessTokenTracker= new AccessTokenTracker() {
 
                 if (task.isSuccessful()) {
 
-                    Toast.makeText(Login_form.this, "Welcome to JUNNON\nJUNNON में आपका स्वागत है", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login_form.this, "Hello", Toast.LENGTH_SHORT).show();
 
 
                     // startActivity(new Intent(getApplicationContext(),HomeActivity.class));
