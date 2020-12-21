@@ -20,7 +20,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,6 +34,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.mit_muzaffarpur.Bottom.MainActivity;
 
 import java.util.Objects;
 
@@ -135,10 +139,7 @@ accessTokenTracker= new AccessTokenTracker() {
 
 
 
-*/
-
-
-        //---------------------GOOGLE SIGN IN---------------------------
+*///---------------------GOOGLE SIGN IN---------------------------
 
 
         signInButton = findViewById(R.id.sign_in_button);
@@ -174,7 +175,7 @@ accessTokenTracker= new AccessTokenTracker() {
             }
         });
 
-*/
+
         //-------------------------------EMAIL LOGIN------------------------------------
 
 
@@ -227,7 +228,7 @@ accessTokenTracker= new AccessTokenTracker() {
                                     Toast.makeText(Login_form.this, "Wait for few seconds while we" +
                                             " log you in", Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(getApplicationContext(),
-                                            HomeActivity.class));
+                                            MainActivity.class));
 
 
                                 } else {
@@ -273,7 +274,7 @@ accessTokenTracker= new AccessTokenTracker() {
 
             Toast.makeText(Login_form.this, "Signed in successfully", Toast.LENGTH_SHORT).show();
             FirebaseGoogleAuth(Objects.requireNonNull(acc));
-            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
         } catch (ApiException e) {
 
 
@@ -336,7 +337,7 @@ accessTokenTracker= new AccessTokenTracker() {
 
 
     }
-//373 and 380 was not disabled
+
 
     public void sign_upForm(View view) {
         startActivity(new Intent(getApplicationContext(), Signup_form.class));
@@ -427,9 +428,7 @@ accessTokenTracker= new AccessTokenTracker() {
 
 
 
-/*
-
-    private void handleFacebookToken(AccessToken token) {
+/*    private void handleFacebookToken(AccessToken token) {
         Log.d(TAG, "handleFacebookToken" + token);
 
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
@@ -443,7 +442,7 @@ accessTokenTracker= new AccessTokenTracker() {
                             FirebaseUser user = firebaseAuth.getCurrentUser();
                             updateUItwo(user);
                          //   startActivity(new Intent(getApplicationContext(),HomeActivity
-                            //   .class));//i think it's wrong
+                            //   .class));
                         }
                         else
                         {
@@ -458,19 +457,7 @@ accessTokenTracker= new AccessTokenTracker() {
                     }
                 });
 
-
-    }
-
-
-
-
-
-
-
-
-
-
-
+   }
 
     private  void updateUItwo(FirebaseUser user)
     {
@@ -505,17 +492,16 @@ accessTokenTracker= new AccessTokenTracker() {
        // startActivity(new Intent(getApplicationContext(),HomeActivity.class));//3.5
     }
 
-
+*/
     @Override
     protected void onStart() {
         super.onStart();
         firebaseAuth.addAuthStateListener(authStateListener);
-        //startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-        //4-agr sirf ye rhega to login actvity nhi aaega
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 
 
-    @Override
+   @Override
     protected void onStop() {
         super.onStop();
 
@@ -531,12 +517,12 @@ accessTokenTracker= new AccessTokenTracker() {
 
 
     }
-    */
 
-   /* @Override
+
+   @Override
     public void onBackPressed(){
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setMessage(getString(R.string.exit)).setCancelable(false).setPositiveButton(
+        builder.setMessage("Are you sure to exit ?").setCancelable(false).setPositiveButton(
                 "Yes",
                 new DialogInterface.OnClickListener() {
                     @Override
