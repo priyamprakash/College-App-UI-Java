@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:id="@+id/myLayout"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="30dp"
+    tools:context=".Signup_form">
+
+
+
+<ProgressBar
+    android:id="@+id/progressBar"
+    android:layout_width="137dp"
+    android:layout_height="81dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="10dp"
+    android:visibility="gone" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColorHint="#fff"
+        >
+
+
+
+        <EditText
+            android:id="@+id/txt_full_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Full name"
+            android:ems="10"
+            android:fontFamily="@font/normal"
+            android:inputType="text"
+            android:textSize="20sp"
+            android:autofillHints="" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textColorHint="#fff"
+        >
+
+
+
+        <EditText
+            android:id="@+id/txt_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="username"
+            android:ems="10"
+            android:fontFamily="@font/normal"
+            android:inputType="text"
+            android:textSize="20sp"
+            android:autofillHints="" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+    android:layout_marginTop="5dp"
+        android:textColorHint="#fff"
+       >
+
+
+
+    <EditText
+        android:id="@+id/txt_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:fontFamily="@font/normal"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:textSize="20sp"
+        android:autofillHints="" />
+</com.google.android.material.textfield.TextInputLayout>
+<com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+    android:layout_marginTop="5dp"
+    app:passwordToggleEnabled="true"
+        android:textColorHint="#fff"
+       >
+
+
+
+    <EditText
+        android:id="@+id/txt_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:fontFamily="@font/normal"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        android:autofillHints="" />
+</com.google.android.material.textfield.TextInputLayout>
+<com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+    android:layout_marginTop="5dp"
+    app:passwordToggleEnabled="true"
+        android:textColorHint="#fff"
+       >
+
+
+
+    <EditText
+        android:id="@+id/txt_confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm Password"
+        android:fontFamily="@font/normal"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        android:autofillHints="" />
+</com.google.android.material.textfield.TextInputLayout>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender:"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            />
+        <RadioButton
+            android:id="@+id/male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="male"
+            android:textColor="#fff"
+            android:fontFamily="@font/normal"
+            android:textSize="20sp"
+            />
+        <RadioButton
+            android:id="@+id/female"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+       android:text="female"
+            android:textColor="#fff"
+        android:fontFamily="@font/normal"
+        android:textSize="20sp"
+        />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="SIGN UP"
+        android:fontFamily="@font/normal"
+        android:gravity="center"
+
+        android:textSize="22sp"
+        android:textColor="#fff"
+        android:layout_marginTop="40dp"
+        android:background="@color/colorPrimaryDark">
+
+    </Button>
+</LinearLayout>
