@@ -9,15 +9,8 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="30dp"
-    tools:context="com.mitm.junoon.Login_signup.Login_form">
-
-
-<ImageView
-    android:layout_width="100dp"
-    android:layout_height="100dp"
-    android:layout_marginTop="30dp"
-    android:background="@drawable/junooncircle"
-    />
+    tools:context=".Login_form"
+    >
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -35,7 +28,7 @@
             android:layout_height="wrap_content"
             android:hint="Email"
             android:ems="10"
-            android:fontFamily="@font/imprima"
+            android:fontFamily="@font/normal"
             android:inputType="textEmailAddress"
             android:textSize="20sp"
             android:autofillHints="" />
@@ -58,7 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
-            android:fontFamily="@font/imprima"
+            android:fontFamily="@font/normal"
             android:ems="10"
             android:inputType="textPassword"
             android:textSize="20sp"
@@ -71,7 +64,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
         android:background="#05136D"
-        android:fontFamily="@font/imprima"
+        android:fontFamily="@font/normal"
         android:text="Login"
         android:textColor="#ffffff"
         android:textSize="22sp"/>
@@ -88,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:background="#00FFFFFF"
-                android:fontFamily="@font/ubuntu_light"
+                android:fontFamily="@font/normal"
 
                 android:onClick="sign_upForm"
                 android:text="SIGN UP instead?"
@@ -107,7 +100,7 @@
                 android:layout_width="170dp"
                 android:layout_height="40dp"
                 android:background="#00FFFFFF"
-                android:fontFamily="@font/ubuntu_light"
+                android:fontFamily="@font/normal"
                 android:onClick="forgot"
 
                 android:text="Forgot password ?"
