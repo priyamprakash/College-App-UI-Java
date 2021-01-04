@@ -27,9 +27,6 @@ public class NotificationFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView  =  inflater.inflate(R.layout.fragment_notification,container,false);
 
-
-
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerViewNotifications  = rootView.findViewById(R.id.recycler_notification);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);

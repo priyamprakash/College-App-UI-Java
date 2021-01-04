@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     tools:context=".ClubProfile.FragmentMembers">
 
@@ -12,72 +13,45 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        app:tabIndicatorColor="@color/colorPrimaryDark"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
         android:layout_height="wrap_content"
-        android:text="yo"
+        android:layout_width="match_parent"
+        app:tabSelectedTextColor="#000000"
+        tools:ignore="MissingConstraints">
 
-        />
-    <androidx.recyclerview.widget.RecyclerView
-        android:background="@color/white"
-        android:id="@+id/recyclerViewMembers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+        <com.google.android.material.tabs.TabItem
+            android:text="faculties"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+        <com.google.android.material.tabs.TabItem
+            android:text="members"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
 
-    <LinearLayout
+        <com.google.android.material.tabs.TabItem
+            android:text="family"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="initiators"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+
+
+    </com.google.android.material.tabs.TabLayout>
+    <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-        <Button
-            android:id="@+id/faculties"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="faculties"
-            android:textAllCaps="false"
-            android:fontFamily="@font/normal"
-            android:layout_margin="2dp"
-            android:textSize="12dp"
-            android:background="@drawable/blue_button"
-            />
-        <Button
-            android:layout_margin="2dp"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAllCaps="false"
-            android:fontFamily="@font/normal"
-            android:text="members"
-            android:textSize="12dp"
-            android:background="@drawable/blue_button"
-            />
-        <Button
-            android:layout_margin="2dp"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAllCaps="false"
-            android:fontFamily="@font/normal"
-            android:text="family"
-            android:textSize="12dp"
-            android:background="@drawable/blue_button"
-            />
-        <Button
-            android:layout_margin="2dp"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAllCaps="false"
-            android:fontFamily="@font/normal"
-            android:text="initiators"
-            android:textSize="12dp"
-            android:background="@drawable/blue_button"
-            />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout">
 
-    </LinearLayout>
-
+    </FrameLayout>
 
 
 </LinearLayout>

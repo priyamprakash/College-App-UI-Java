@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
          */
 
         slidingRootNav = new SlidingRootNavBuilder(this)
-                .withDragDistance(180)
+                .withDragDistance(225)
                 .withRootViewScale(0.75f)
                 .withRootViewElevation(25)
                 .withToolbarMenuToggle(toolbar)
@@ -120,6 +120,8 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
 
             }
         });
+
+
         meo.setOnShowListener(new MeowBottomNavigation.ShowListener() {
             @Override
             public void onShowItem(MeowBottomNavigation.Model item) {

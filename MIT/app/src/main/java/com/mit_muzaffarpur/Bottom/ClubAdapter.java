@@ -32,6 +32,7 @@ public class ClubAdapter extends FirebaseRecyclerAdapter<ClubModel, ClubAdapter.
                                     @NonNull final ClubModel clubModel)
     {
 
+        Log.d(TAG, "onBindViewHolder: clubName  " + "Hello");
         Log.d(TAG, "onBindViewHolder: clubName  " + clubModel.getClubName());
         Picasso.get().load(clubModel.getClubImage()).placeholder(R.drawable.image_placeholder).into(holder.clubImage);
 

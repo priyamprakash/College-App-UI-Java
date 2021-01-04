@@ -9,10 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        android:padding="10dp"
+        android:padding="4dp"
         android:scrollbars="none"
-        android:orientation="vertical"
-        tools:context=".Bottom.HomeFragment">
+        android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,9 +44,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
                         >
-
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/profile_circle"
                             android:layout_width="75dp"
@@ -82,11 +79,6 @@
                             android:background="@color/dark_yellow"
                             />
                     </LinearLayout>
-
-
-
-
-
                 </androidx.cardview.widget.CardView>
                 <TextView
                     android:layout_marginVertical="10dp"
@@ -99,7 +91,7 @@
                     android:textSize="18dp"
                     />
                 <androidx.recyclerview.widget.RecyclerView
-                    android:background="@color/neomorph_background_color"
+                    android:background="@color/white"
                     android:id="@+id/recyclerView_notify"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -119,6 +111,7 @@
                     />
                 <androidx.recyclerview.widget.RecyclerView
                     android:background="@color/white"
+                    android:padding="5dp"
                     android:id="@+id/recyclerViewClubs"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -180,8 +173,6 @@
                     android:layout_height="wrap_content"
                     app:layout_behavior="@string/appbar_scrolling_view_behavior"
                     />
-
-
             </LinearLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -189,7 +180,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
-
                 <Button
                     android:id="@+id/button_find"
                     android:layout_marginBottom="50dp"
@@ -207,8 +197,6 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

@@ -16,15 +16,13 @@
         android:theme="@style/AppTheme">
 
 
-
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/dark_yellow"
             android:fitsSystemWindows="true"
-            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
-          >
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/club_logo"
@@ -35,11 +33,11 @@
                 android:layout_marginBottom="15dp"
                 app:layout_collapseMode="pin" />
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin" />
+            <!--            <androidx.appcompat.widget.Toolbar-->
+            <!--                android:id="@+id/toolbar"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="?attr/actionBarSize"-->
+            <!--                app:layout_collapseMode="pin" />-->
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
@@ -47,45 +45,43 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/layout_bg"
+        android:background="@drawable/white"
         android:padding="10dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <LinearLayout
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
 
 
+            <TextView
 
-                <TextView
+                android:id="@+id/club_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="20dp"
+                android:background="#00000000"
+                android:fontFamily="@font/bold"
+                android:text="clubName"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="22sp" />
 
-                    android:id="@+id/club_name"
-                    android:layout_marginStart="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:background="#00000000"
-                    android:fontFamily="@font/bold"
-                    android:text="clubName"
-                    android:textAllCaps="true"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="22sp" />
-                <TextView
+            <TextView
 
-                    android:id="@+id/club_tagline"
-                    android:layout_marginStart="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:background="#00000000"
-                    android:fontFamily="@font/normal"
-                    android:text="tagline"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="16dp" />
-
-
+                android:id="@+id/club_tagline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="20dp"
+                android:background="#00000000"
+                android:fontFamily="@font/normal"
+                android:text="tagline"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16dp" />
 
 
             <View
@@ -97,29 +93,32 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="40dp"
-                >
+                android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/fb"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:src="@drawable/fb"/>
+                    android:src="@drawable/fb" />
 
                 <ImageView
+                    android:id="@+id/insta"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:src="@drawable/insta" />
 
                 <ImageView
+                    android:id="@+id/linkedin"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:src="@drawable/linkedin" />
 
                 <ImageView
+                    android:id="@+id/twitter"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
@@ -127,17 +126,119 @@
                     tools:ignore="Suspicious0dp" />
 
                 <ImageView
+                    android:id="@+id/gmail"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:src="@drawable/gmail" />
             </LinearLayout>
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
-                android:src="@drawable/dotted"
-                android:layerType="software" />
+                android:layerType="software"
+                android:src="@drawable/dotted" />
 
+
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+<HorizontalScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:scrollbars="none"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+
+
+
+        <Button
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:id="@+id/updates"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:background="@color/white"
+            android:fontFamily="@font/normal"
+            android:text="Updates"
+            android:textAllCaps="false"
+            android:textColor="@color/royal_blue"
+
+            />
+
+        <Button
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:id="@+id/events"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:background="@color/white"
+            android:fontFamily="@font/normal"
+            android:text="Events"
+            android:textAllCaps="false"
+            android:textColor="@color/royal_blue"
+
+            />
+
+        <Button
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:id="@+id/fests"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:background="@color/white"
+            android:fontFamily="@font/normal"
+            android:text="fests"
+            android:textAllCaps="false"
+            android:textColor="@color/royal_blue" />
+
+        <Button
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:id="@+id/members"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:background="@color/white"
+            android:fontFamily="@font/normal"
+            android:text="members"
+            android:textAllCaps="false"
+            android:textColor="@color/royal_blue" />
+        <Button
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:id="@+id/announcements"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:background="@color/white"
+            android:fontFamily="@font/normal"
+            android:text="Announcements"
+            android:textAllCaps="false"
+            android:textColor="@color/royal_blue" />
+
+        <Button
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:id="@+id/achievements"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:background="@color/white"
+            android:fontFamily="@font/normal"
+            android:text="Achievements"
+            android:textAllCaps="false"
+            android:textColor="@color/royal_blue"
+
+            />
+    </LinearLayout>
+</HorizontalScrollView>
+
+            </androidx.core.widget.NestedScrollView>
             <FrameLayout
                 android:id="@+id/fragment_container"
                 android:layout_width="match_parent"
@@ -145,70 +246,6 @@
                 android:layout_below="@+id/toolbar"
 
                 />
-            <androidx.core.widget.NestedScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="announcements"
-        android:id="@+id/announcements"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="achievements"
-        android:id="@+id/achievements"
-
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="updates"
-        android:id="@+id/updates"
-
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="events"
-        android:id="@+id/events"
-
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="fests"
-        android:id="@+id/fests"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="members"
-        android:id="@+id/members"
-
-        />
-
-
-
-</LinearLayout>
-
-
-            </androidx.core.widget.NestedScrollView>
-
-
-
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
