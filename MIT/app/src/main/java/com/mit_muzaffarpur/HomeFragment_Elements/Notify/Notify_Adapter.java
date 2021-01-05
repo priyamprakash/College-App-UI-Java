@@ -1,5 +1,6 @@
 package com.mit_muzaffarpur.HomeFragment_Elements.Notify;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,6 +43,7 @@ public class Notify_Adapter extends RecyclerView.Adapter<Notify_Adapter.NotifyVi
         return new NotifyViewHolder(view);
     }
 
+    @SuppressLint("ResourceAsColor")
     @Override
     public void onBindViewHolder(NotifyViewHolder holder, int position) {
         //getting the product of the specified position
@@ -52,11 +54,12 @@ public class Notify_Adapter extends RecyclerView.Adapter<Notify_Adapter.NotifyVi
 
         if(position%2 == 0)
         {
-            holder.notifyLayout.setBackgroundResource(R.drawable.royal_blue);
+            holder.notifyLayout.setBackgroundResource(R.drawable.tool);
         }
         else
         {
-            holder.notifyLayout.setBackgroundResource(R.drawable.dark_red);
+            holder.notifyLayout.setBackgroundResource(R.drawable.white);
+            holder.description.setTextColor(R.color.colorPrimaryDark);
         }
 
 

@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:background="@color/white"
+        android:background="@color/neomorph_background_color"
         android:elevation="15dp"
         android:padding="4dp"
         app:neomorph_background_color="@color/neomorph_background_color"
@@ -22,13 +22,14 @@
 
 <androidx.cardview.widget.CardView
     android:layout_width="100dp"
-    android:layout_height="100dp"
+    android:layout_height="wrap_content"
     app:cardCornerRadius="12dp"
     >
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
         <com.makeramen.roundedimageview.RoundedImageView
@@ -39,20 +40,21 @@
             app:riv_corner_radius="12dp"
             />
 
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/clubName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="clubName"
+            android:textSize="12dp"
+            android:textColor="#000000"
+            android:textAlignment="center" />
 
-
-    </RelativeLayout>
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>
     </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
 
-    <TextView
-        android:id="@+id/clubName"
-        android:visibility="gone"
-        android:textAlignment="center"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
-        android:text="clubName" />
+
 
 </androidx.cardview.widget.CardView>

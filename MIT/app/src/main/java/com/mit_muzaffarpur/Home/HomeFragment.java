@@ -10,7 +10,6 @@ import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -37,7 +36,7 @@ public class HomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-      View  rootView = inflater.inflate(R.layout.fragment_meow_home,container,false);
+      View  rootView = inflater.inflate(R.layout.home,container,false);
 
 
         /**
@@ -88,10 +87,10 @@ public class HomeFragment extends Fragment {
       recyclerViewClubs  = rootView.findViewById(R.id.recyclerViewClubs);
 
       recyclerViewClubs.setHasFixedSize(true);
-      GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);//grid recycler
-      recyclerViewClubs.setLayoutManager(gridLayoutManager);//grid
-//      linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-//      recyclerViewClubs.setLayoutManager(linearLayoutManager);
+//      GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);//grid recycler
+//      recyclerViewClubs.setLayoutManager(gridLayoutManager);//grid
+      linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+      recyclerViewClubs.setLayoutManager(linearLayoutManager);
 
 
       FirebaseRecyclerOptions<ClubModel> options =
@@ -103,7 +102,7 @@ public class HomeFragment extends Fragment {
 
       clubAdapter = new ClubAdapter(options);
       recyclerViewClubs.setAdapter(clubAdapter);
-      Log.d(TAG, "onCreate: adapter "+ clubAdapter);
+      Log.d(TAG, "onCreate: adapter "+ "Hello");
 
     return  rootView;
     }
@@ -111,6 +110,7 @@ public class HomeFragment extends Fragment {
   @Override
   public void onStart() {
     super.onStart();
+    Log.d(TAG, "onStart: " + "start");
     clubAdapter.startListening();
   }
 
@@ -118,6 +118,7 @@ public class HomeFragment extends Fragment {
   @Override
   public void onStop() {
     super.onStop();
+    Log.d(TAG, "onStop: " + "stop");
     clubAdapter.stopListening();
   }
 }

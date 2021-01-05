@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur;
+package com.mit_muzaffarpur.LoginSignup;
 
 import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
@@ -24,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mit_muzaffarpur.Home.MainActivity;
+import com.mit_muzaffarpur.R;
 
 @Keep
 public class LoginActivity extends AppCompatActivity {

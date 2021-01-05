@@ -5,7 +5,7 @@
     android:background="@color/white"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".LoginSignup.RegisterActivity">
 
     <ImageView
         android:id="@+id/img"

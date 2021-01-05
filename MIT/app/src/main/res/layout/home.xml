@@ -9,7 +9,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/neomorph_background_color"        android:padding="4dp"
+        android:background="@color/neomorph_background_color"
+        android:padding="4dp"
         android:scrollbars="none"
         android:orientation="vertical">
         <LinearLayout
@@ -36,12 +37,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:background="@drawable/dark_yellow">
+                        android:background="@drawable/white">
 
                         <Button
                             android:layout_width="match_parent"
                             android:layout_height="200dp"
-                            android:background="@color/dark_yellow"
+                            android:background="@color/white"
                             />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -56,7 +57,7 @@
                     android:textSize="18dp"
                     />
                 <androidx.recyclerview.widget.RecyclerView
-                    android:background="@color/white"
+                    android:background="@color/neomorph_background_color"
                     android:id="@+id/recyclerView_notify"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -75,8 +76,7 @@
                     android:textSize="18dp"
                     />
                 <androidx.recyclerview.widget.RecyclerView
-                    android:background="@color/white"
-                    android:padding="5dp"
+                    android:background="@color/neomorph_background_color"
                     android:id="@+id/recyclerViewClubs"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
