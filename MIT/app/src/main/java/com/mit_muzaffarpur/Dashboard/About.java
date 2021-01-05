@@ -1,13 +1,10 @@
-package com.mit_muzaffarpur.AboutMIT;
+package com.mit_muzaffarpur.Dashboard;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mit_muzaffarpur.R;

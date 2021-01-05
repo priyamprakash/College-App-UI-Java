@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.Bottom;
+package com.mit_muzaffarpur.Home;
 
 import android.content.Intent;
 import android.util.Log;

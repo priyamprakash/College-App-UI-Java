@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".Bottom.MainActivity">
+    android:background="@color/neomorph_background_color"
+    tools:context=".Home.MainActivity">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="50dp"
@@ -32,10 +32,15 @@
         android:layout_height="40dp"
         android:layout_weight="5"
         android:src="@drawable/profile_logo"
-
         />
 </LinearLayout>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginTop="65dp"
+        android:layerType="software"
+        android:src="@drawable/dotted" />
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
@@ -51,6 +56,8 @@
         app:mbn_backgroundBottomColor="@color/colorPrimaryDark"
         app:mbn_countBackgroundColor="#ff6f00"
         app:mbn_defaultIconColor="@color/white"
-        app:mbn_selectedIconColor="@color/colorPrimaryDark"
+
         />
 </RelativeLayout>
+
+<!--app:mbn_selectedIconColor="@color/colorPrimaryDark"-->

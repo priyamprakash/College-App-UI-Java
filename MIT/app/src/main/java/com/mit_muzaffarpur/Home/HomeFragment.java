@@ -1,11 +1,10 @@
-package com.mit_muzaffarpur.Bottom;
+package com.mit_muzaffarpur.Home;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
@@ -14,19 +13,16 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.bumptech.glide.Glide;
+
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 import com.mit_muzaffarpur.HomeFragment_Elements.Club_Cell.Club_Cell_Model;
-import com.mit_muzaffarpur.HomeFragment_Elements.Club_Cell.Club_Cell_adapter;
 import com.mit_muzaffarpur.HomeFragment_Elements.Notify.Notify_Adapter;
 import com.mit_muzaffarpur.HomeFragment_Elements.Notify.Notify_Model;
 import com.mit_muzaffarpur.R;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 import static android.content.ContentValues.TAG;
 @Keep
@@ -47,12 +43,12 @@ public class HomeFragment extends Fragment {
         /**
          profile pic ,email se utthakr chhipkana hai , sath me first name bhi
          */
-        CircleImageView profile_circle = rootView.findViewById(R.id.profile_circle);
-        Glide.with(this).load(R.drawable.profile_logo).placeholder(R.drawable.profile_logo).into(profile_circle);
-
-        TextView hey = rootView.findViewById(R.id.hey);
-        String first_name = "Priyam";
-        hey.setText("Hey," + "\n" + first_name + "!" );
+//        CircleImageView profile_circle = rootView.findViewById(R.id.profile_circle);
+//        Glide.with(this).load(R.drawable.profile_logo).placeholder(R.drawable.profile_logo).into(profile_circle);
+//
+//        TextView hey = rootView.findViewById(R.id.hey);
+//        String first_name = "Priyam";
+//        hey.setText("Hey," + "\n" + first_name + "!" );
 
         /**
          * Notification adapter

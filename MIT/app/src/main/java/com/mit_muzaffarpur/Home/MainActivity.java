@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.Bottom;
+package com.mit_muzaffarpur.Home;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
@@ -14,11 +14,10 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
-import com.mit_muzaffarpur.AboutMIT.About;
+import com.mit_muzaffarpur.Dashboard.About;
 import com.mit_muzaffarpur.AppInfo;
 import com.mit_muzaffarpur.HomeFragment_Elements.Drawer.DrawerItem;
 import com.mit_muzaffarpur.HomeFragment_Elements.Drawer.Drawer_Adapter;
@@ -35,9 +34,11 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
     final String TAG ="Main_Meow";
 
     MeowBottomNavigation meo;
-    private final static int ID_HOME=1;
-    private final static int ID_LOGIN=2;
-    private final static int ID_ABOUT=3;
+    private final static int ID_LEFT=1;
+    private final static int ID_HOME=2;
+    private final static int ID_NOTIFICATION=3;
+    private final static int ID_NEWS = 4;
+
 //---------------------------------------------------
     private static final int POS_DASHBOARD = 0;
     private static final int POS_ABOUT = 1;
@@ -101,22 +102,25 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
         drawer_adapter.setListener(this);
 
         meo=(MeowBottomNavigation)findViewById(R.id.bottom_nav);
-        meo.add(new MeowBottomNavigation.Model(1,R.drawable.ic_baseline_dashboard_24));
-        meo.add(new MeowBottomNavigation.Model(2,R.drawable.ic_baseline_dashboard_24));
-        meo.add(new MeowBottomNavigation.Model(3,R.drawable.ic_baseline_dashboard_24));
+        meo.add(new MeowBottomNavigation.Model(1,R.drawable.ic_dashboard));
+        meo.add(new MeowBottomNavigation.Model(2,R.drawable.ic_home));
+        meo.add(new MeowBottomNavigation.Model(3,R.drawable.ic_notifications));
+        meo.add(new MeowBottomNavigation.Model(4,R.drawable.ic_news));
+
+
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
 
         meo.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
-                Toast.makeText(getApplicationContext(),"Clicked item"+item.getId(),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(),"Clicked item"+item.getId(),Toast.LENGTH_SHORT).show();
             }
         });
         meo.setOnReselectListener(new MeowBottomNavigation.ReselectListener() {
             @Override
             public void onReselectItem(MeowBottomNavigation.Model item) {
-                Toast.makeText(getApplicationContext(),"Clicked item"+item.getId(),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(),"Clicked item"+item.getId(),Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -127,16 +131,19 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
             public void onShowItem(MeowBottomNavigation.Model item) {
                 Fragment select_fragment = null;
                 switch (item.getId()){
-                    case ID_HOME:
+                    case ID_LEFT:
                         select_fragment=new LeftFragment();
                         break;
-                    case ID_LOGIN:
+                    case ID_HOME:
                         select_fragment=new HomeFragment();
                         break;
-                    case ID_ABOUT:
+                    case ID_NOTIFICATION:
                         select_fragment=new NotificationFragment();
                         break;
-                    default:
+                    case ID_NEWS:
+                        select_fragment = new NewsFragment();
+                        break;
+                        default:
                         select_fragment=new HomeFragment();
                         break;
 

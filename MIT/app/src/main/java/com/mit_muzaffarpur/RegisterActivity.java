@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.mit_muzaffarpur.Bottom.MainActivity;
+import com.mit_muzaffarpur.Home.MainActivity;
 
 import java.util.HashMap;
 
@@ -47,7 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         Glide.with(getApplicationContext())
                 .load(R.drawable.mit_pic)
-                .override(0,  0) // (change according to your wish)
+                .override(0,  0) // (change according to your wish , pic quality kharab krne k liye , )
                 .error(R.drawable.image_placeholder)
                 .into(imageView);
 
@@ -59,9 +59,8 @@ public class RegisterActivity extends AppCompatActivity {
         register=findViewById(R.id.register);
         txt_login=findViewById(R.id.txt_login);
         //---------------------FIREBASE AUTHENTICATION------------------------------------
-        //initialisiting the firebasebaseauth in the on create method
+
         auth= FirebaseAuth.getInstance();
-        //Already have an account pr onClick Listener
         txt_login.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -88,7 +87,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 else if (str_password.length() < 6)
                 {
-                    Toast.makeText(RegisterActivity.this, "Password must have atleast 6 characters", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Password must have at least 6 characters", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
@@ -101,7 +100,6 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     }
-    //register namak ek alg function hai , on create k bahar hai ,will be called from register ke on click ke else block se
 
     private void register(final String username, final String fullname, String email, String password)
     {
@@ -121,8 +119,8 @@ public class RegisterActivity extends AppCompatActivity {
                             hashMap.put("id",userid);
                             hashMap.put("username",username.toLowerCase());
                             hashMap.put("fullname",fullname);
-                            hashMap.put("bio","");
-                            hashMap.put("imageurl","https://firebasestorage.googleapis.com/v0/b/mitcollege-71b82.appspot.com/o/placeholder.png?alt=media&token=87cf2e28-a257-459f-8216-e62495fd0bcd");
+//                            hashMap.put("bio","");
+//                            hashMap.put("imageurl","https://firebasestorage.googleapis.com/v0/b/mitcollege-71b82.appspot.com/o/placeholder.png?alt=media&token=87cf2e28-a257-459f-8216-e62495fd0bcd");
 
                             reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
@@ -133,11 +131,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         Intent intent=new Intent(RegisterActivity.this, MainActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         startActivity(intent);
-
-
                                     }
-
-
                                 }
                             });
 

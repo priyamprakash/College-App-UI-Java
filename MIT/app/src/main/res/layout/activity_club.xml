@@ -256,7 +256,7 @@
         android:layout_marginRight="30dp"
         android:baselineAlignBottom="false"
         android:clickable="true"
-        android:src="@drawable/ic_baseline_dashboard_24"
+        android:src="@drawable/ic_dashboard"
         app:fabSize="normal"
         app:layout_anchor="@id/appbar"
         app:layout_anchorGravity="end|bottom"
