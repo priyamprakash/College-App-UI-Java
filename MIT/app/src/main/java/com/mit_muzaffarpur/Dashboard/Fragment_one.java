@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.AboutMIT;
+package com.mit_muzaffarpur.Dashboard;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,18 +9,15 @@ import androidx.fragment.app.Fragment;
 
 import com.mit_muzaffarpur.R;
 
+public class Fragment_one extends Fragment {
 
-public  class Fragment_two extends Fragment {
-
-    public Fragment_two() {
-        // Required empty public constructor
+    public Fragment_one() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_two, container, false);
+        return inflater.inflate(R.layout.fragment_one, container, false);
     }
 
 }

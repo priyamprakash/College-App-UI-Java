@@ -33,16 +33,7 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="14dp" />
 
-        <TextView
-            android:onClick="dept"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:fontFamily="@font/normal"
-            android:gravity="center"
-            android:rotation="270"
-            android:text="Depart."
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="14dp" />
+
 
         <TextView
             android:layout_width="wrap_content"

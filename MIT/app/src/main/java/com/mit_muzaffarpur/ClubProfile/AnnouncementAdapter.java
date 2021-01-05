@@ -27,7 +27,7 @@ public class AnnouncementAdapter extends FirebaseRecyclerAdapter<AnnouncementMod
     @Override
     protected void onBindViewHolder(@NonNull AnnouncementAdapter.AnnouncementViewHolder holder, int position, @NonNull AnnouncementModel model) {
 
-        holder.message.setText(model.getAnnouncementMessage());
+        holder.message.setText(model.getAnnouncementMessage() + "\n");
         holder.timestamp.setText(model.getAnnouncementTimestamp());
         holder.title.setText(model.getAnnouncementTitle());
 

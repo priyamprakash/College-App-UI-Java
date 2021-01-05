@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.Bottom;
+package com.mit_muzaffarpur.Home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,6 +15,10 @@ public class LeftFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_meow__about,container,false);
+        View rootView = inflater.inflate(R.layout.fragment_left,container,false);
+
+
+
+        return rootView;
     }
 }

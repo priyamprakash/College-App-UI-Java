@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.AboutMIT;
+package com.mit_muzaffarpur.Dashboard;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;

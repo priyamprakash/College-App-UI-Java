@@ -3,13 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mit_muzaffarpur.Dashboard.Fragment_one">
+    tools:context=".ClubProfile.FragmentMemberMember">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/home_fragment" />
-
+        android:text="@string/hello_blank_fragment" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:id="@+id/recyclerViewMembersFaculties"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 </FrameLayout>

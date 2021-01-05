@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.Bottom;
+package com.mit_muzaffarpur.Home;
 
 
 import android.os.Bundle;
@@ -15,8 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
-import com.mit_muzaffarpur.ClubProfile.MemberModel;
-import com.mit_muzaffarpur.ClubProfile.MembersAdapter;
 import com.mit_muzaffarpur.R;
 @Keep
 public class NotificationFragment extends Fragment {
@@ -26,9 +24,6 @@ public class NotificationFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView  =  inflater.inflate(R.layout.fragment_notification,container,false);
-
-
-
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerViewNotifications  = rootView.findViewById(R.id.recycler_notification);

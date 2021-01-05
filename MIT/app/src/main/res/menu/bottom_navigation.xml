@@ -3,33 +3,33 @@
 
     <item
         android:id="@+id/nav_acievements"
-        android:icon="@drawable/ic_baseline_dashboard_24"
+        android:icon="@drawable/ic_dashboard"
         android:title="home"
         />
     <item
         android:id="@+id/nav_announcements"
-        android:icon="@drawable/ic_baseline_dashboard_24"
+        android:icon="@drawable/ic_dashboard"
         android:title=""
         />
     <item
         android:id="@+id/nav_events"
-        android:icon="@drawable/ic_baseline_dashboard_24"
+        android:icon="@drawable/ic_dashboard"
         android:title=""
         />
     <item
         android:id="@+id/nav_members"
-        android:icon="@drawable/ic_baseline_dashboard_24"
+        android:icon="@drawable/ic_dashboard"
         android:title=""
         />
     <item
         android:id="@+id/nav_fests"
-        android:icon="@drawable/ic_baseline_dashboard_24"
+        android:icon="@drawable/ic_dashboard"
         android:title=""
         />
 
     <item
         android:id="@+id/nav_upates"
-        android:icon="@drawable/ic_baseline_dashboard_24"
+        android:icon="@drawable/ic_dashboard"
         android:title=""
         />
 

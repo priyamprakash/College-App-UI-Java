@@ -1,9 +1,8 @@
-package com.mit_muzaffarpur.Bottom;
+package com.mit_muzaffarpur.Home;
 
 import androidx.annotation.Keep;
 
 @Keep
-
 public class ClubModel {
     public String clubId;
     public String clubName;

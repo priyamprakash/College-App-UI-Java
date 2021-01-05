@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#ffffff</color>
     <color name="colorPrimaryDark">#252827</color>
-    <color name="colorAccent">#FBDD80</color>
+    <color name="colorAccent">#2196F3</color>
     <color name="light_skin">#99FBDD7F</color>
     <color name="royal_blue">#F701061E</color>
     <color name="dark_yellow">#FFBF00</color>
@@ -15,3 +15,4 @@
 </resources>
 <!--252827-->
 <!--C89900-->
+<!--FBDD80-->
