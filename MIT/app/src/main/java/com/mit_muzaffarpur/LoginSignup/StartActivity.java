@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur;
+package com.mit_muzaffarpur.LoginSignup;
 
 import androidx.annotation.Keep;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,8 @@ import android.widget.Button;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.mit_muzaffarpur.Home.MainActivity;
+import com.mit_muzaffarpur.R;
+
 @Keep
 public class StartActivity extends AppCompatActivity {
 

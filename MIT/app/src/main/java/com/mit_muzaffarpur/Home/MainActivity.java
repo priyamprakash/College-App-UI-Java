@@ -2,6 +2,7 @@ package com.mit_muzaffarpur.Home;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
+import androidx.annotation.Keep;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
@@ -29,6 +30,7 @@ import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 
 import java.util.Arrays;
 
+@Keep
 public class MainActivity extends AppCompatActivity implements Drawer_Adapter.OnItemSelectedListener{
 
     final String TAG ="Main_Meow";

@@ -32,11 +32,13 @@
                     android:orientation="vertical">
 
 
-                    <ImageView
+                    <com.makeramen.roundedimageview.RoundedImageView
                         android:id="@+id/notification_image"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:src="@color/colorPrimaryDark"
+                        android:scaleType="fitXY"
+                        app:riv_corner_radius="12dp"
+                        android:src="@drawable/mit_pic"
                         />
                     <TextView
                         android:layout_margin="10dp"
