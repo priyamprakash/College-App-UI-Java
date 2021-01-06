@@ -1,6 +1,7 @@
 package com.mit_muzaffarpur.Home;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,12 +18,13 @@ import com.mit_muzaffarpur.R;
 
 public class LeftFragment extends Fragment {
     @Nullable
-    Button button_mit,button_dept;
+    Button button_mit,button_dept,button_find;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_left,container,false);
 
         button_mit = rootView.findViewById(R.id.button_mit);
         button_dept = rootView.findViewById(R.id.button_dept);
+        button_find = rootView.findViewById(R.id.button_find);
 
         button_mit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +43,17 @@ public class LeftFragment extends Fragment {
             }
         });
 
+        button_find.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse("geo:0,0?q=MIT Muzaffarpur");
+//                Uri uri = Uri.parse("geo:0,0?q=\"" + 26.1413 + "," + 85.3654 + "\"");
+                Intent intent4 = new Intent(android.content.Intent.ACTION_VIEW, uri);
+                intent4.setPackage("com.google.android.apps.maps");
+                startActivity(intent4);
+
+            }
+        });
 
 
 
