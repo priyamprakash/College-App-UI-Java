@@ -94,7 +94,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:background="@color/neomorph_background_color"
                     android:id="@+id/recyclerViewClubs"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
 
