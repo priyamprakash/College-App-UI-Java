@@ -12,19 +12,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.mit_muzaffarpur.Dashboard.About;
-import com.mit_muzaffarpur.Dashboard.DepartmentActivity;
+import com.mit_muzaffarpur.Dashboard.Alumni.Alumni;
 import com.mit_muzaffarpur.R;
 
 public class DashboardFragment extends Fragment {
     @Nullable
-    Button button_mit,button_dept,button_find;
+    Button button_mit,button_dept,button_find,button_alumni;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_left,container,false);
 
         button_mit = rootView.findViewById(R.id.button_mit);
         button_dept = rootView.findViewById(R.id.button_dept);
         button_find = rootView.findViewById(R.id.button_find);
+        button_alumni = rootView.findViewById(R.id.button_alumni);
 
         button_mit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,8 +55,13 @@ public class DashboardFragment extends Fragment {
             }
         });
 
-
-
+        button_alumni.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent  = new Intent(view.getContext(), Alumni.class);
+                view.getContext().startActivity(intent);
+            }
+        });
 
         return rootView;
     }
