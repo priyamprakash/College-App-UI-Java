@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur;
+package com.mit_muzaffarpur.Dashboard;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,6 +35,7 @@ import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
+import com.mit_muzaffarpur.R;
 
 public class Website extends AppCompatActivity {
 

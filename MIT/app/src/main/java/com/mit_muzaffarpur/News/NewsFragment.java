@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.Home;
+package com.mit_muzaffarpur.News;
 
 import android.os.Bundle;
 
@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
+import com.mit_muzaffarpur.Notification.NotificationAdapter;
+import com.mit_muzaffarpur.Notification.NotificationModel;
 import com.mit_muzaffarpur.R;
 
 

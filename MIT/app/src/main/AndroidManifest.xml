@@ -21,13 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AppInfo" />
+        <activity android:name=".Dashboard.AppInfo" />
         <activity android:name=".ClubProfile.ClubActivity" />
         <activity android:name=".Home.MainActivity">
 
         </activity>
         <activity android:name=".Dashboard.DepartmentActivity" />
-        <activity android:name=".Website" />
+        <activity android:name=".Dashboard.Website" />
         <activity android:name=".Dashboard.About" />
     </application>
 

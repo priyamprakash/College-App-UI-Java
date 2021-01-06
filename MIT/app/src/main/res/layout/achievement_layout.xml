@@ -48,7 +48,7 @@
                         android:layout_height="wrap_content"
                         android:autoLink="web"
                         android:fontFamily="@font/normal"
-                        android:text="Description of the post is to be provided here through firebase recycler adapter .\n"
+                        android:text="Description of the alumniModel is to be provided here through firebase recycler adapter .\n"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="14dp"
                         />

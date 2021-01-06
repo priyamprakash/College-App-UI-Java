@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.mit_muzaffarpur.R;
-import com.mit_muzaffarpur.Website;
 
 public class About extends AppCompatActivity {
 

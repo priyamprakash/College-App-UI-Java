@@ -19,11 +19,14 @@ import android.widget.Toast;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.mit_muzaffarpur.Dashboard.About;
-import com.mit_muzaffarpur.AppInfo;
-import com.mit_muzaffarpur.HomeFragment_Elements.Drawer.DrawerItem;
-import com.mit_muzaffarpur.HomeFragment_Elements.Drawer.Drawer_Adapter;
-import com.mit_muzaffarpur.HomeFragment_Elements.Drawer.SimpleItem;
-import com.mit_muzaffarpur.HomeFragment_Elements.Drawer.SpaceItem;
+import com.mit_muzaffarpur.Dashboard.AppInfo;
+import com.mit_muzaffarpur.Dashboard.DashboardFragment;
+import com.mit_muzaffarpur.HomeFragmentElements.Drawer.DrawerItem;
+import com.mit_muzaffarpur.HomeFragmentElements.Drawer.Drawer_Adapter;
+import com.mit_muzaffarpur.HomeFragmentElements.Drawer.SimpleItem;
+import com.mit_muzaffarpur.HomeFragmentElements.Drawer.SpaceItem;
+import com.mit_muzaffarpur.News.NewsFragment;
+import com.mit_muzaffarpur.Notification.NotificationFragment;
 import com.mit_muzaffarpur.R;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
@@ -44,8 +47,8 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
 //---------------------------------------------------
     private static final int POS_DASHBOARD = 0;
     private static final int POS_ABOUT = 1;
-    private static final int POS_APP_INFO = 2;
-    private static final int DEPARTMENT = 3;
+    private static final int POS_APP_INFO = 3;
+    private static final int DEPARTMENT = 2;
     private static final int POS_PROFILE = 4;
     private static final int POS_LOGOUT = 5;
     private String[] screenTitles;
@@ -134,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
                 Fragment select_fragment = null;
                 switch (item.getId()){
                     case ID_LEFT:
-                        select_fragment=new LeftFragment();
+                        select_fragment=new DashboardFragment();
                         break;
                     case ID_HOME:
                         select_fragment=new HomeFragment();

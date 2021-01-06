@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.HomeFragment_Elements.Notify;
+package com.mit_muzaffarpur.HomeFragmentElements.Notify;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

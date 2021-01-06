@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.Home;
+package com.mit_muzaffarpur.Notification;
 
 import android.view.LayoutInflater;
 import android.view.View;
