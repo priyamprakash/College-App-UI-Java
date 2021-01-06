@@ -12,6 +12,7 @@ import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -102,8 +103,8 @@ public class HomeFragment extends Fragment {
         recyclerViewClubs = rootView.findViewById(R.id.recyclerViewClubs);
 
         recyclerViewClubs.setHasFixedSize(true);
-//      GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);//grid recycler
-//      recyclerViewClubs.setLayoutManager(gridLayoutManager);//grid
+//        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);//grid recycler
+//        recyclerViewClubs.setLayoutManager(gridLayoutManager);//grid
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerViewClubs.setLayoutManager(linearLayoutManager);
 
@@ -137,4 +138,5 @@ public class HomeFragment extends Fragment {
         Log.d(TAG, "onStop: " + "stop");
         clubAdapter.stopListening();
     }
+
 }

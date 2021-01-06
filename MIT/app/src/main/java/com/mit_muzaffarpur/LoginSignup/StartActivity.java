@@ -38,8 +38,8 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);//nitish sir firebase hack - 1
-
+//        FirebaseDatabase.getInstance().setPersistenceEnabled(true);//nitish sir firebase hack - 1
+//splash activity me rakhna hai setPersistence
         login = findViewById(R.id.login);
         register = findViewById(R.id.register);
 
