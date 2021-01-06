@@ -23,7 +23,8 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:padding="10dp">
 
 
                 <LinearLayout
@@ -33,32 +34,66 @@
 
 
                     <TextView
-                        android:id="@+id/title"
+                        android:id="@+id/name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/bold"
-                        android:text="Title"
+                        android:fontFamily="@font/rubik"
+                        android:textAllCaps="true"
+                        android:text="Name"
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="18dp"
+                        android:textSize="16dp"
                         android:textStyle="bold" />
-                    <me.biubiubiu.justifytext.library.JustifyTextView
-                        android:id="@+id/description"
-                        android:layout_width="wrap_content"
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="horizontal"
+                     android:layout_marginTop="10dp"
+                     >
+
+                     <TextView
+                         android:id="@+id/batch"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:fontFamily="@font/normal"
+                         android:text="1987"
+                         android:textColor="@color/colorPrimaryDark"
+                         android:textSize="14dp"
+                         />
+                     <TextView
+                         android:id="@+id/branch"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="30dp"
+                         android:text="Civil"
+                         android:fontFamily="@font/normal"
+                         android:textColor="@color/colorPrimaryDark"
+                         android:textSize="14dp"
+                         />
+
+                 </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/designation"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:autoLink="web"
+                        android:textAlignment="viewEnd"
                         android:fontFamily="@font/normal"
-                        android:text="Description of the alumniModel is to be provided here through firebase recycler adapter .\n"
+                        android:text="Chief Engineer (Retd.)"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="14dp"
                         />
                     <TextView
-                        android:id="@+id/author"
+                        android:id="@+id/company"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="DATE: 01-11-2020 "
+                        android:textAlignment="viewEnd"
+                        android:text="Eastern Railway"
+                        android:fontFamily="@font/bold"
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="16dp"
+                        android:textSize="14dp"
                         />
+
 
                 </LinearLayout>
             </RelativeLayout>
