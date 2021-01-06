@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.HomeFragment_Elements.Club_Cell;
+package com.mit_muzaffarpur.HomeFragmentElements.Club_Cell;
 
 public class Club_Cell_Model {
     private  String name , subtitle , description;

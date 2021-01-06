@@ -3,20 +3,20 @@ package com.mit_muzaffarpur;
 import androidx.annotation.Keep;
 
 @Keep
-public class Post {
+public class AlumniModel {
     String clubImage;
-    String title;
+    String name;
     String description;
     String author;
 
-    public Post() {
+    public AlumniModel() {
     }
 
 
     @Override
     public String toString() {
-        return "Post{" +
-                "title='" + title + '\'' +
+        return "AlumniModel{" +
+                "title='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", author='" + author + '\'' +
                 ", clubImage='" +clubImage +'\'' +
@@ -24,12 +24,12 @@ public class Post {
     }
 
     //getter and seter for all three strings
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getClubImage() {

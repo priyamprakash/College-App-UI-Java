@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.Home;
+package com.mit_muzaffarpur.HomeFragmentElements;
 
 import android.content.Intent;
 import android.util.Log;

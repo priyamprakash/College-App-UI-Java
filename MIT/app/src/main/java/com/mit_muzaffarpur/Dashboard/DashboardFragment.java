@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.Home;
+package com.mit_muzaffarpur.Dashboard;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -16,7 +16,7 @@ import com.mit_muzaffarpur.Dashboard.About;
 import com.mit_muzaffarpur.Dashboard.DepartmentActivity;
 import com.mit_muzaffarpur.R;
 
-public class LeftFragment extends Fragment {
+public class DashboardFragment extends Fragment {
     @Nullable
     Button button_mit,button_dept,button_find;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

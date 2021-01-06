@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.HomeFragment_Elements.Club_Cell;
+package com.mit_muzaffarpur.HomeFragmentElements.Club_Cell;
 
 import android.content.Context;
 import android.content.Intent;

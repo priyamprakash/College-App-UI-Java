@@ -15,9 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
-import com.mit_muzaffarpur.HomeFragment_Elements.Club_Cell.Club_Cell_Model;
-import com.mit_muzaffarpur.HomeFragment_Elements.Notify.Notify_Adapter;
-import com.mit_muzaffarpur.HomeFragment_Elements.Notify.Notify_Model;
+import com.mit_muzaffarpur.HomeFragmentElements.ClubAdapter;
+import com.mit_muzaffarpur.HomeFragmentElements.ClubModel;
+import com.mit_muzaffarpur.HomeFragmentElements.Club_Cell.Club_Cell_Model;
+import com.mit_muzaffarpur.HomeFragmentElements.Notify.Notify_Adapter;
+import com.mit_muzaffarpur.HomeFragmentElements.Notify.Notify_Model;
 import com.mit_muzaffarpur.R;
 
 import java.util.ArrayList;

@@ -16,11 +16,11 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import me.biubiubiu.justifytext.library.JustifyTextView;
 
 @Keep
-public class PostAdapter extends FirebaseRecyclerAdapter<Post, PostAdapter.PostViewHolder> {
+public class PostAdapter extends FirebaseRecyclerAdapter<AlumniModel, PostAdapter.PostViewHolder> {
 
     private static final String TAG = "PostAdapter";
 
-    public PostAdapter(@NonNull FirebaseRecyclerOptions<Post> options) {
+    public PostAdapter(@NonNull FirebaseRecyclerOptions<AlumniModel> options) {
         super(options);
 
 
@@ -29,12 +29,12 @@ public class PostAdapter extends FirebaseRecyclerAdapter<Post, PostAdapter.PostV
     //bind view holder
     @Override
     protected void onBindViewHolder(@NonNull PostViewHolder holder, int position,
-                                    @NonNull Post post) {
+                                    @NonNull AlumniModel alumniModel) {
 
-        String description = post.getDescription() + "\n";
-        holder.title.setText(post.getTitle());
+        String description = alumniModel.getDescription() + "\n";
+        holder.title.setText(alumniModel.getName());
         holder.description.setText(description);
-        holder.author.setText(post.getAuthor());
+        holder.author.setText(alumniModel.getAuthor());
 
 
         Log.d(TAG, "onBindViewHolder: " + holder.title.getText());

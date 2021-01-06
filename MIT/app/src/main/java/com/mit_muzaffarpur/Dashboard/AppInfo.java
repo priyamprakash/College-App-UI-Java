@@ -1,8 +1,10 @@
-package com.mit_muzaffarpur;
+package com.mit_muzaffarpur.Dashboard;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.mit_muzaffarpur.R;
 
 public class AppInfo extends AppCompatActivity {
 //AppInfo
