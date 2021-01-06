@@ -32,7 +32,7 @@ public class About extends AppCompatActivity {
 
     }
     public  void dept(View view){
-        Intent intent = new Intent(getBaseContext(), Department_Activity.class);
+        Intent intent = new Intent(getBaseContext(), DepartmentActivity.class);
         startActivity(intent);
 
     }

@@ -1,46 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dashboard.Department_Activity">
+    android:orientation="vertical"
+    tools:context=".Dashboard.DepartmentActivity">
 
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimaryDark"
+        app:tabIndicatorColor="@color/colorAccent"
+        app:tabIndicatorHeight="2dp"
+        app:tabMode="scrollable"
+        app:tabTextColor="@color/white"
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.tabs.TabItem
-            android:text="@string/home_fragment"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content" />
-        <com.google.android.material.tabs.TabItem
-            android:text="@string/java_fragment"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
+            android:text="CE" />
 
         <com.google.android.material.tabs.TabItem
-            android:text="@string/php_fragment"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
-        <com.google.android.material.tabs.TabItem
-            android:text="@string/android_fragment"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
+            android:text="ME" />
 
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EE" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ECE" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IT" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LT" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pharmacy" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ap SH" />
 
 
     </com.google.android.material.tabs.TabLayout>
-    <FrameLayout
-        android:id="@+id/frameLayout"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout">
+        android:orientation="horizontal">
 
-    </FrameLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageButton
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:src="@drawable/ic_back_arrow" />
+
+        <TextView
+            android:id="@+id/dept_id"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/bold"
+            android:padding="10dp"
+            android:text="0"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/dept_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/bold"
+            android:padding="10dp"
+            android:text="Priyam"
+            android:textSize="18dp" />
+    </LinearLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:padding="10dp"
+            android:text="Introduction"
+            android:textSize="16dp" />
+
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:id="@+id/intro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/normal"
+            android:padding="10dp"
+            android:text="Intro of this department is being loaded Wait  ..."
+            android:textSize="14dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:padding="10dp"
+            android:text="Vision"
+            android:textSize="16dp" />
+
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:id="@+id/vision"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/normal"
+            android:padding="10dp"
+            android:text="Vision of this department is being loaded Wait  ..."
+            android:textSize="14dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:padding="10dp"
+            android:text="Mision"
+            android:textSize="16dp" />
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:id="@+id/mission"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/normal"
+            android:padding="10dp"
+            android:text="Vision of this department is being loaded Wait  ..."
+            android:textSize="14dp" />
+    </LinearLayout>
+</ScrollView>
+
+</LinearLayout>

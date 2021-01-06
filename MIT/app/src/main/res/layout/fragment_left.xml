@@ -50,7 +50,7 @@
 
 
                 <Button
-                    android:id="@+id/button1"
+                    android:id="@+id/button_mit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#00ffffff" />
@@ -96,7 +96,7 @@
 
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/button_dept"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#00ffffff" />

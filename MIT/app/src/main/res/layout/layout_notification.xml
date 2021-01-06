@@ -31,7 +31,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-
                     <com.makeramen.roundedimageview.RoundedImageView
                         android:id="@+id/notification_image"
                         android:layout_width="match_parent"
