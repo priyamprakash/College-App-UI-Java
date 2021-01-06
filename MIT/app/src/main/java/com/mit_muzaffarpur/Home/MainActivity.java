@@ -3,6 +3,8 @@ package com.mit_muzaffarpur.Home;
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
 import androidx.annotation.Keep;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
@@ -10,14 +12,29 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.play.core.appupdate.AppUpdateInfo;
+import com.google.android.play.core.appupdate.AppUpdateManager;
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
+import com.google.android.play.core.install.model.AppUpdateType;
+import com.google.android.play.core.install.model.UpdateAvailability;
+import com.google.android.play.core.tasks.OnSuccessListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.mit_muzaffarpur.Dashboard.About;
 import com.mit_muzaffarpur.Dashboard.AppInfo;
 import com.mit_muzaffarpur.Dashboard.DashboardFragment;
@@ -28,15 +45,20 @@ import com.mit_muzaffarpur.HomeFragmentElements.Drawer.SpaceItem;
 import com.mit_muzaffarpur.News.NewsFragment;
 import com.mit_muzaffarpur.Notification.NotificationFragment;
 import com.mit_muzaffarpur.R;
+import com.vorlonsoft.android.rate.AppRate;
+import com.vorlonsoft.android.rate.OnClickButtonListener;
+import com.vorlonsoft.android.rate.StoreType;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 @Keep
 public class MainActivity extends AppCompatActivity implements Drawer_Adapter.OnItemSelectedListener{
 
     final String TAG ="Main_Meow";
+    private int REQUEST_CODE = 11 ;
 
     MeowBottomNavigation meo;
     private final static int ID_LEFT=1;
@@ -61,6 +83,92 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
         setContentView(R.layout.activity_main_meow);
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        /**
+         * PUSH NOTIFICATIONS, SUBSCRIBING TO GENERAL TOPIC
+         */
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+            NotificationChannel channel =
+                    new NotificationChannel("MyNotifications", "MyNotifications",
+                            NotificationManager.IMPORTANCE_DEFAULT);
+
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            Objects.requireNonNull(manager).createNotificationChannel(channel);
+        }
+
+
+//subscribing to push notification , topic= general
+
+        final String type = "general";
+        FirebaseMessaging.getInstance().subscribeToTopic(type)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg = "Successful";
+                        if (!task.isSuccessful()) {
+                            msg = "Failed";
+                        }
+                        Log.d(TAG, "onComplete push" + msg);
+                        Toast.makeText(MainActivity.this, "Subscribed to " + type, Toast.LENGTH_LONG).show();
+                    }
+                });
+
+        /**
+         *App Update
+         */
+        final AppUpdateManager appUpdateManager = AppUpdateManagerFactory.create(MainActivity.this);
+        com.google.android.play.core.tasks.Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
+        appUpdateInfoTask.addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
+            @Override
+            public void onSuccess(AppUpdateInfo result) {
+                if(result.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                        && result.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE))
+                {
+                    try{
+                        appUpdateManager.startUpdateFlowForResult(result ,AppUpdateType.IMMEDIATE,MainActivity.this , REQUEST_CODE);
+                    }
+                    catch (IntentSender.SendIntentException e)
+                    {
+                        e.printStackTrace();
+                    }
+
+                }
+
+            }
+        });
+
+        /**
+         *App Rating Dialog
+         */
+        //app rating option
+        AppRate.with(this)
+                .setStoreType(StoreType.GOOGLEPLAY)
+                .setInstallDays((byte) 0) // default 10, 0 means install day
+                .setLaunchTimes((byte) 3) // default 10
+                .setRemindInterval((byte) 2) // default 1
+                .setRemindLaunchTimes((byte) 2) // default 1 (each launch)
+                .setShowLaterButton(true) // default true
+                .setDebug(false)// default false
+
+                .setOnClickButtonListener(new OnClickButtonListener() { // callback listener.
+                    @Override
+                    public void onClickButton(byte which) {
+                        Log.d(MainActivity.class.getName(), Byte.toString(which));
+                    }
+                })
+                .monitor();
+
+        if (AppRate.with(this).getStoreType() == StoreType.GOOGLEPLAY) {
+            //Check that Google Play is available
+            if (GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this) != ConnectionResult.SERVICE_MISSING) {
+                // Show a dialog if meets conditions
+                AppRate.showRateDialogIfMeetsConditions(this);
+            }
+        } else {
+            //Show a dialog if meets conditions
+            AppRate.showRateDialogIfMeetsConditions(this);
+        }
 
         /**
          Toolbar
@@ -156,6 +264,20 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,select_fragment).commit();
             }
         });
+
+
+    }
+    //for app update code
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_CODE){
+            Toast.makeText(this , "Start DOWNLOAD"  , Toast.LENGTH_SHORT).show();
+            if(requestCode != REQUEST_CODE){
+                Log.d(TAG, "onActivityResult: " + resultCode);
+
+            }
+        }
 
 
     }
