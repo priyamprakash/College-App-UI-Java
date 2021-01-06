@@ -95,65 +95,10 @@
                     android:background="@color/neomorph_background_color"
                     android:id="@+id/recyclerViewClubs"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="150dp"
                     />
 
 
-                <TextView
-                    android:layout_marginVertical="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Clubs"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:fontFamily="@font/bold"
-                    android:textStyle="bold"
-                    android:textSize="18dp"
-                    />
-                <!--     Club ka recycler view -->
-                <androidx.recyclerview.widget.RecyclerView
-                    android:background="@color/neomorph_background_color"
-                    android:id="@+id/recyclerView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                    />
-
-                <TextView
-                    android:layout_marginVertical="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cells"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:fontFamily="@font/bold"
-                    android:textStyle="bold"
-                    android:textSize="18dp"
-                    />
-                <!--     Club ka recycler view -->
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView_cell"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                    />
-
-
-                <TextView
-                    android:layout_marginVertical="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Videos"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:fontFamily="@font/bold"
-                    android:textStyle="bold"
-                    android:textSize="18dp"
-                    />
-                <!--     Club ka recycler view -->
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView_youtube"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                    />
             </LinearLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -162,6 +107,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
                 <Button
+                    android:visibility="gone"
                     android:id="@+id/button_find"
                     android:layout_marginBottom="50dp"
                     android:layout_width="180dp"
