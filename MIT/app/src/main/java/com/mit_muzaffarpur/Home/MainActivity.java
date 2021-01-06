@@ -142,33 +142,31 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
          *App Rating Dialog
          */
         //app rating option
-        AppRate.with(this)
-                .setStoreType(StoreType.GOOGLEPLAY)
-                .setInstallDays((byte) 0) // default 10, 0 means install day
-                .setLaunchTimes((byte) 3) // default 10
-                .setRemindInterval((byte) 2) // default 1
-                .setRemindLaunchTimes((byte) 2) // default 1 (each launch)
-                .setShowLaterButton(true) // default true
-                .setDebug(false)// default false
+//        AppRate.with(this)
+//                .setStoreType(StoreType.GOOGLEPLAY)
+//                .setInstallDays((byte) 0) // default 10, 0 means install day
+//                .setLaunchTimes((byte) 3) // default 10
+//                .setRemindInterval((byte) 2) // default 1
+//                .setRemindLaunchTimes((byte) 2) // default 1 (each launch)
+//                .setShowLaterButton(true) // default true
+//                .setDebug(false)// default false
+//
+//                .setOnClickButtonListener(new OnClickButtonListener() { // callback listener.
+//                    @Override
+//                    public void onClickButton(byte which) {
+//                        Log.d(MainActivity.class.getName(), Byte.toString(which));
+//                    }
+//                })
+//                .monitor();
+//
+//        if (AppRate.with(this).getStoreType() == StoreType.GOOGLEPLAY) {
+//            if (GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this) != ConnectionResult.SERVICE_MISSING) {
+//                AppRate.showRateDialogIfMeetsConditions(this);
+//            }
+//        } else {
 
-                .setOnClickButtonListener(new OnClickButtonListener() { // callback listener.
-                    @Override
-                    public void onClickButton(byte which) {
-                        Log.d(MainActivity.class.getName(), Byte.toString(which));
-                    }
-                })
-                .monitor();
-
-        if (AppRate.with(this).getStoreType() == StoreType.GOOGLEPLAY) {
-            //Check that Google Play is available
-            if (GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this) != ConnectionResult.SERVICE_MISSING) {
-                // Show a dialog if meets conditions
-                AppRate.showRateDialogIfMeetsConditions(this);
-            }
-        } else {
-            //Show a dialog if meets conditions
-            AppRate.showRateDialogIfMeetsConditions(this);
-        }
+//            AppRate.showRateDialogIfMeetsConditions(this);
+//        }
 
         /**
          Toolbar

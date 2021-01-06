@@ -1,10 +1,12 @@
 package com.mit_muzaffarpur.Home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
@@ -14,33 +16,46 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.mit_muzaffarpur.HomeFragmentElements.ClubAdapter;
 import com.mit_muzaffarpur.HomeFragmentElements.ClubModel;
 import com.mit_muzaffarpur.HomeFragmentElements.Club_Cell.Club_Cell_Model;
 import com.mit_muzaffarpur.HomeFragmentElements.Notify.Notify_Adapter;
 import com.mit_muzaffarpur.HomeFragmentElements.Notify.Notify_Model;
+import com.mit_muzaffarpur.LoginSignup.StartActivity;
 import com.mit_muzaffarpur.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
+
 @Keep
 public class HomeFragment extends Fragment {
 
-  private RecyclerView recyclerViewClubs;
-  private ClubAdapter clubAdapter;
+    private RecyclerView recyclerViewClubs;
+    private ClubAdapter clubAdapter;
 
     List<Notify_Model> notifyList;
     List<Club_Cell_Model> clubList;
     RecyclerView recyclerView_notify;
+    TextView logout;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-      View  rootView = inflater.inflate(R.layout.home,container,false);
+        View rootView = inflater.inflate(R.layout.home, container, false);
 
-
+        logout = rootView.findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getActivity(), StartActivity.class)
+                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+            }
+        });
         /**
          profile pic ,email se utthakr chhipkana hai , sath me first name bhi
          */
@@ -82,45 +97,44 @@ public class HomeFragment extends Fragment {
         recyclerView_notify.setAdapter(notify_Adapter);
 
 
-
-
 //Experiment
-      LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-      recyclerViewClubs  = rootView.findViewById(R.id.recyclerViewClubs);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        recyclerViewClubs = rootView.findViewById(R.id.recyclerViewClubs);
 
-      recyclerViewClubs.setHasFixedSize(true);
+        recyclerViewClubs.setHasFixedSize(true);
 //      GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);//grid recycler
 //      recyclerViewClubs.setLayoutManager(gridLayoutManager);//grid
-      linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-      recyclerViewClubs.setLayoutManager(linearLayoutManager);
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerViewClubs.setLayoutManager(linearLayoutManager);
 
 
-      FirebaseRecyclerOptions<ClubModel> options =
-              new FirebaseRecyclerOptions.Builder<ClubModel>()
-                      .setQuery(FirebaseDatabase
-                                      .getInstance().getReference().child("clubs"),
-                              ClubModel.class).build();
+        FirebaseRecyclerOptions<ClubModel> options =
+                new FirebaseRecyclerOptions.Builder<ClubModel>()
+                        .setQuery(FirebaseDatabase
+                                        .getInstance().getReference().child("clubs"),
+                                ClubModel.class).build();
 
 
-      clubAdapter = new ClubAdapter(options);
-      recyclerViewClubs.setAdapter(clubAdapter);
-      Log.d(TAG, "onCreate: adapter "+ "Hello");
+        clubAdapter = new ClubAdapter(options);
+        recyclerViewClubs.setAdapter(clubAdapter);
+        Log.d(TAG, "onCreate: adapter " + "Hello");
 
-    return  rootView;
+        return rootView;
     }
-  //to start
-  @Override
-  public void onStart() {
-    super.onStart();
-    Log.d(TAG, "onStart: " + "start");
-    clubAdapter.startListening();
-  }
 
-  //to stop
-  @Override
-  public void onStop() {
-    super.onStop();
-    Log.d(TAG, "onStop: " + "stop");
-    clubAdapter.stopListening();
-  }
+    //to start
+    @Override
+    public void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart: " + "start");
+        clubAdapter.startListening();
+    }
+
+    //to stop
+    @Override
+    public void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop: " + "stop");
+        clubAdapter.stopListening();
+    }
 }
