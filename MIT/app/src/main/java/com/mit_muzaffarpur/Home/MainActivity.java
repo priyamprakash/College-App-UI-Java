@@ -3,6 +3,7 @@ package com.mit_muzaffarpur.Home;
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
 import androidx.annotation.Keep;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
@@ -10,14 +11,20 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.mit_muzaffarpur.Dashboard.About;
 import com.mit_muzaffarpur.Dashboard.AppInfo;
 import com.mit_muzaffarpur.Dashboard.DashboardFragment;
@@ -32,6 +39,7 @@ import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 @Keep
 public class MainActivity extends AppCompatActivity implements Drawer_Adapter.OnItemSelectedListener{
@@ -61,6 +69,36 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
         setContentView(R.layout.activity_main_meow);
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        /**
+         * PUSH NOTIFICATIONS, SUBSCRIBING TO GENERAL TOPIC
+         */
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+            NotificationChannel channel =
+                    new NotificationChannel("MyNotifications", "MyNotifications",
+                            NotificationManager.IMPORTANCE_DEFAULT);
+
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            Objects.requireNonNull(manager).createNotificationChannel(channel);
+        }
+
+
+//subscribing to push notification , topic= general
+
+        final String type = "general";
+        FirebaseMessaging.getInstance().subscribeToTopic(type)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg = "Successful";
+                        if (!task.isSuccessful()) {
+                            msg = "Failed";
+                        }
+                        Log.d(TAG, "onComplete push" + msg);
+                        Toast.makeText(MainActivity.this, "Subscribed to " + type, Toast.LENGTH_LONG).show();
+                    }
+                });
 
         /**
          Toolbar

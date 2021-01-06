@@ -30,6 +30,20 @@
         <activity android:name=".Dashboard.DepartmentActivity" />
         <activity android:name=".Dashboard.Website" />
         <activity android:name=".Dashboard.About" />
+        <service
+            android:name=".Home.MyMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_stat_name" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
     </application>
 
 </manifest>
