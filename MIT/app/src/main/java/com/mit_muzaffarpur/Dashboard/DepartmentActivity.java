@@ -3,6 +3,7 @@ package com.mit_muzaffarpur.Dashboard;
 import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -14,11 +15,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.mit_muzaffarpur.Dashboard.Alumni.AlumniAdapter;
 import com.mit_muzaffarpur.R;
 
 @Keep
 public class DepartmentActivity extends AppCompatActivity {
     private static final String TAG = "DepartmentActivity";
+    private RecyclerView recyclerView;
+    private AlumniAdapter adapter;
     TabLayout tabLayout;
     TextView dept_id, dept_name , dept_intro , dept_vision , dept_mission;
     String intro, vision,mission = "";
@@ -85,6 +89,7 @@ public class DepartmentActivity extends AppCompatActivity {
 //-------------------
                 databaseReference = FirebaseDatabase
                         .getInstance().getReference().child("departments").child(deptId);
+                databaseReference.keepSynced(true);//nitish sir firebase hack
 
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -127,9 +132,10 @@ public class DepartmentActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
+
+
+
 
 
 }

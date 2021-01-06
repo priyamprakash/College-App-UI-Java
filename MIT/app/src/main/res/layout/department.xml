@@ -148,9 +148,29 @@
             android:layout_height="match_parent"
             android:fontFamily="@font/normal"
             android:padding="10dp"
-            android:text="Vision of this department is being loaded Wait  ..."
+            android:text="Mission of this department is being loaded Wait  ..."
             android:textSize="14dp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:src="@drawable/dotted"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:padding="10dp"
+            android:text="Faculties"
+            android:textSize="16dp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
+
 </ScrollView>
 
 </LinearLayout>
