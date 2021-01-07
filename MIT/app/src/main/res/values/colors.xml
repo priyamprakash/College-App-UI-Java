@@ -7,11 +7,12 @@
     <color name="royal_blue">#F701061E</color>
     <color name="dark_yellow">#FFBF00</color>
     <color name="dark_red">#A50B00</color>
-    <color name="white">#fff</color>
+    <color name="white">#FFFFFF</color>
     <color name="pink">#F89FBD</color>
     <color name="dark_brown">#492620</color>
 
-
+<!--   DARK YELLOW:  FFBF00-->
+<!--PERFECT BLUE FOR COLOR ACCENT: 2196F3-->
 </resources>
 <!--252827-->
 <!--C89900-->

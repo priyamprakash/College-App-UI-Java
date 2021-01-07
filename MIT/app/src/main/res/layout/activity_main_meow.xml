@@ -56,6 +56,9 @@
         app:mbn_backgroundBottomColor="@color/colorPrimaryDark"
         app:mbn_countBackgroundColor="#ff6f00"
         app:mbn_defaultIconColor="@color/white"
+        app:mbn_selectedIconColor="@color/white"
+        app:mbn_circleColor="@color/colorAccent"
+
 
         />
 </RelativeLayout>
