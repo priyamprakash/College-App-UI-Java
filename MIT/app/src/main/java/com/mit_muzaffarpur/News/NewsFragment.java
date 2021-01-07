@@ -12,14 +12,12 @@ import android.view.ViewGroup;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
-import com.mit_muzaffarpur.Notification.NotificationAdapter;
-import com.mit_muzaffarpur.Notification.NotificationModel;
 import com.mit_muzaffarpur.R;
 
 
 public class NewsFragment extends Fragment {
     private RecyclerView recyclerViewNotifications;
-    private NotificationAdapter notificationAdapter;
+    private NewsAdapter newsAdapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,15 +33,15 @@ public class NewsFragment extends Fragment {
         recyclerViewNotifications.setLayoutManager(linearLayoutManager);
 
 
-        FirebaseRecyclerOptions<NotificationModel> options =
-                new FirebaseRecyclerOptions.Builder<NotificationModel>()
+        FirebaseRecyclerOptions<NewsModel> options =
+                new FirebaseRecyclerOptions.Builder<NewsModel>()
                         .setQuery(FirebaseDatabase
                                         .getInstance().getReference().child("news"),
-                                NotificationModel.class).build();
+                                NewsModel.class).build();
 
 
-        notificationAdapter = new NotificationAdapter(options);
-        recyclerViewNotifications.setAdapter(notificationAdapter);
+        newsAdapter = new NewsAdapter(options);
+        recyclerViewNotifications.setAdapter(newsAdapter);
 
         return  rootView;
 
@@ -54,13 +52,13 @@ public class NewsFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        notificationAdapter.startListening();
+        newsAdapter.startListening();
     }
 
     //to stop
     @Override
     public void onStop() {
         super.onStop();
-        notificationAdapter.stopListening();
+        newsAdapter.stopListening();
     }
 }

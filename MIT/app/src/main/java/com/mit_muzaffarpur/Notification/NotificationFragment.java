@@ -15,12 +15,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
+import com.mit_muzaffarpur.News.NewsAdapter;
+import com.mit_muzaffarpur.News.NewsModel;
 import com.mit_muzaffarpur.R;
 
 @Keep
 public class NotificationFragment extends Fragment {
     private RecyclerView recyclerViewNotifications;
-    private NotificationAdapter notificationAdapter;
+    private NewsAdapter newsAdapter;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -35,15 +37,15 @@ public class NotificationFragment extends Fragment {
         recyclerViewNotifications.setLayoutManager(linearLayoutManager);
 
 
-        FirebaseRecyclerOptions<NotificationModel> options =
-                new FirebaseRecyclerOptions.Builder<NotificationModel>()
+        FirebaseRecyclerOptions<NewsModel> options =
+                new FirebaseRecyclerOptions.Builder<NewsModel>()
                         .setQuery(FirebaseDatabase
                                         .getInstance().getReference().child("notifications"),
-                                NotificationModel.class).build();
+                                NewsModel.class).build();
 
 
-        notificationAdapter = new NotificationAdapter(options);
-        recyclerViewNotifications.setAdapter(notificationAdapter);
+        newsAdapter = new NewsAdapter(options);
+        recyclerViewNotifications.setAdapter(newsAdapter);
 
         return  rootView;
 
@@ -54,14 +56,14 @@ public class NotificationFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        notificationAdapter.startListening();
+        newsAdapter.startListening();
     }
 
     //to stop
     @Override
     public void onStop() {
         super.onStop();
-        notificationAdapter.stopListening();
+        newsAdapter.stopListening();
     }
 
 }

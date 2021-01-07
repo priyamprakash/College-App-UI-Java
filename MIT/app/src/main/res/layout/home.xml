@@ -24,16 +24,17 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             >
-            <TextView
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:textAllCaps="false"
                 android:text="Log Out"
-                android:background="@drawable/tool"
+                android:background="@drawable/button"
                 android:id="@+id/logout"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/white"
                 android:layout_margin="8dp"
-                android:textSize="18sp"/>
+                />
 
 <!--            <View-->
 <!--                android:layout_width="match_parent"-->

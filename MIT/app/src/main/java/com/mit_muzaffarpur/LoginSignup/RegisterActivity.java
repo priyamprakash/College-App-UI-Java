@@ -33,7 +33,6 @@ public class RegisterActivity extends AppCompatActivity {
     EditText username,fullname,email,password;
     Button register;
     TextView txt_login;
-    ImageView imageView;
 
     FirebaseAuth auth;
     DatabaseReference reference;
@@ -44,13 +43,13 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        imageView = findViewById(R.id.img);
+//        imageView = findViewById(R.id.img);
 
-        Glide.with(getApplicationContext())
-                .load(R.drawable.mit_pic)
-                .override(0,  0) // (change according to your wish , pic quality kharab krne k liye , )
-                .error(R.drawable.image_placeholder)
-                .into(imageView);
+//        Glide.with(getApplicationContext())
+//                .load(R.drawable.mit_pic)
+//                .override(0,  0) // (change according to your wish , pic quality kharab krne k liye , )
+//                .error(R.drawable.image_placeholder)
+//                .into(imageView);
 
         //sara edit text ko id se link
         username=findViewById(R.id.username);

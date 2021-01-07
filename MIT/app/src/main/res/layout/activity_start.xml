@@ -47,11 +47,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_weight="1"
-            android:background="#00000000"
-            android:fontFamily="@font/bold"
+            android:background="@drawable/tool"
             android:text="Log in"
             android:textAllCaps="false"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white"
             android:textSize="18dp" />
 
         <Button
@@ -61,7 +60,6 @@
             android:layout_margin="20dp"
             android:layout_weight="1"
             android:background="#00000000"
-            android:fontFamily="@font/bold"
             android:text="Register"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimaryDark"

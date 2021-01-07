@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Keep;
@@ -41,7 +42,7 @@ public class HomeFragment extends Fragment {
     List<Notify_Model> notifyList;
     List<Club_Cell_Model> clubList;
     RecyclerView recyclerView_notify;
-    TextView logout;
+    Button logout;
 
     @Nullable
     @Override
