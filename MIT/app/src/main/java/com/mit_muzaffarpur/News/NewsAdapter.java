@@ -1,9 +1,11 @@
 package com.mit_muzaffarpur.News;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Keep;
@@ -35,6 +37,22 @@ public class NewsAdapter extends FirebaseRecyclerAdapter<NewsModel, NewsAdapter.
         holder.timestamp.setText(model.getNotificationTimestamp());
         Picasso.get().load(model.notificationImage).into(holder.notification_image);
 
+//        if(position%2 == 0)
+//        {
+//            holder.layout.setBackgroundResource(R.drawable.tool);
+//            holder.desc.setTextColor(Color.parseColor("#FFFFFF"));
+//            holder.title.setTextColor(Color.parseColor(("#FFFFFF")));
+//        }
+//        else
+//        {
+//            holder.layout.setBackgroundResource(R.drawable.white);
+//            holder.desc.setTextColor(Color.parseColor("#252827"));
+//            holder.title.setTextColor(Color.parseColor(("#252827")));
+//
+//        }
+
+
+
     }
 
     @NonNull
@@ -53,6 +71,7 @@ public class NewsAdapter extends FirebaseRecyclerAdapter<NewsModel, NewsAdapter.
         TextView title, link,timestamp;
         JustifyTextView desc;
         ImageView notification_image;
+        LinearLayout layout;
         public NotificationViewHolder(@NonNull View itemView)
         {
             super(itemView);
@@ -61,6 +80,8 @@ public class NewsAdapter extends FirebaseRecyclerAdapter<NewsModel, NewsAdapter.
             link = itemView.findViewById(R.id.link);
             timestamp = itemView.findViewById(R.id.timestamp);
             notification_image  = itemView.findViewById(R.id.notification_image);
+            layout = itemView.findViewById(R.id.layout);
+
         }
     }
 }

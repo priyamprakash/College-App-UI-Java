@@ -30,7 +30,7 @@
                 android:padding="10dp"
                 android:textAllCaps="false"
                 android:text="Log Out"
-                android:background="@drawable/button"
+                android:background="@drawable/tool"
                 android:id="@+id/logout"
                 android:textColor="@color/white"
                 android:layout_margin="8dp"

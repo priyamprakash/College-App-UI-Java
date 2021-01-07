@@ -2,6 +2,7 @@ package com.mit_muzaffarpur.HomeFragmentElements.Notify;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,16 +53,9 @@ public class Notify_Adapter extends RecyclerView.Adapter<Notify_Adapter.NotifyVi
         holder.Date.setText(notify.getDate());
         holder.description.setText(notify.getDescription() + "\n");
 
-        if(position%2 == 0)
-        {
-            holder.notifyLayout.setBackgroundResource(R.drawable.tool);
-        }
-        else
-        {
-            holder.notifyLayout.setBackgroundResource(R.drawable.white);
-            holder.description.setTextColor(R.color.colorPrimaryDark);
-        }
-
+        holder.notifyLayout.setBackgroundResource(R.drawable.white);
+        holder.description.setTextColor(Color.parseColor("#252827"));
+        holder.Title.setTextColor(Color.parseColor("#252827"));
 
 
 //        Glide.with(mCtx)
