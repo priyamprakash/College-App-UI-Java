@@ -30,17 +30,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
-                    <com.makeramen.roundedimageview.RoundedImageView
-                        android:id="@+id/notification_image"
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:scaleType="fitXY"
-                        app:riv_corner_radius="12dp"
-                        android:src="@drawable/mit_pic"
-                        />
                     <TextView
-                        android:layout_margin="10dp"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginVertical="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="TITLE"
@@ -49,16 +41,44 @@
                         android:fontFamily="@font/bold"
                         android:id="@+id/title"
                         />
-                    <TextView
-                        android:layout_margin="10dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/description"
-                        android:fontFamily="@font/normal"
-                        android:text="Description to be added here "
+                    <ImageView
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginVertical="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimaryDark"
                         />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="4dp"
+                        android:paddingHorizontal="8dp"
+                        >
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/notification_image"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:scaleType="fitXY"
+                            app:riv_corner_radius="6dp"
+                            android:src="@drawable/mit_pic"
+                            android:layout_gravity="center"
+                            />
+                        <me.biubiubiu.justifytext.library.JustifyTextView
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/description"
+                            android:fontFamily="@font/normal"
+                            android:maxLines="4"
+                            android:text="Description to be added here "
+                            />
+                    </LinearLayout>
+
                     <TextView
-                        android:layout_margin="10dp"
+                        android:layout_margin="4dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/link"
@@ -67,10 +87,11 @@
                         android:fontFamily="@font/italic"
                         />
                     <TextView
-                        android:layout_margin="10dp"
+                        android:layout_marginHorizontal="8dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/timestamp"
+                        android:textColor="@color/colorAccent"
                         android:textAlignment="viewEnd"
                         android:text="DATE"
                         />

@@ -1,10 +1,10 @@
-package com.mit_muzaffarpur.Notification;
+package com.mit_muzaffarpur.News;
 
 
 import androidx.annotation.Keep;
 
 @Keep
-public class NotificationModel {
+public class NewsModel {
 
 public  String notificationDescription;
 public  String notificationImage;
@@ -14,7 +14,7 @@ public  String notificationTitle;
 
     @Override
     public String toString() {
-        return "NotificationModel{" +
+        return "NewsModel{" +
                 "notificationDescription='" + notificationDescription + '\'' +
                 ", notificationImage='" + notificationImage + '\'' +
                 ", notificationLink='" + notificationLink + '\'' +

@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.Notification;
+package com.mit_muzaffarpur.News;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,21 +15,23 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.mit_muzaffarpur.R;
 import com.squareup.picasso.Picasso;
 
+import me.biubiubiu.justifytext.library.JustifyTextView;
+
 
 @Keep
-public class NotificationAdapter extends FirebaseRecyclerAdapter<NotificationModel, NotificationAdapter.NotificationViewHolder> {
+public class NewsAdapter extends FirebaseRecyclerAdapter<NewsModel, NewsAdapter.NotificationViewHolder> {
 
-    public NotificationAdapter(@NonNull FirebaseRecyclerOptions<NotificationModel> options) {
+    public NewsAdapter(@NonNull FirebaseRecyclerOptions<NewsModel> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull NotificationViewHolder holder, int position, @NonNull NotificationModel model) {
+    protected void onBindViewHolder(@NonNull NotificationViewHolder holder, int position, @NonNull NewsModel model) {
 
 
         holder.title.setText(model.getNotificationTitle());
         holder.link.setText(model.getNotificationLink());
-        holder.desc.setText(model.getNotificationDescription());
+        holder.desc.setText(model.getNotificationDescription() + "\n");
         holder.timestamp.setText(model.getNotificationTimestamp());
         Picasso.get().load(model.notificationImage).into(holder.notification_image);
 
@@ -41,14 +43,15 @@ public class NotificationAdapter extends FirebaseRecyclerAdapter<NotificationMod
 
 
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.layout_notification, parent, false);
+                .inflate(R.layout.news, parent, false);
 
-        return new NotificationAdapter.NotificationViewHolder(view);
+        return new NewsAdapter.NotificationViewHolder(view);
     }
 
     public class NotificationViewHolder extends RecyclerView.ViewHolder {
 
-        TextView title,desc, link,timestamp;
+        TextView title, link,timestamp;
+        JustifyTextView desc;
         ImageView notification_image;
         public NotificationViewHolder(@NonNull View itemView)
         {
