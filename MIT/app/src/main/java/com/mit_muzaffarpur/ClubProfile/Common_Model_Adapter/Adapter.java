@@ -15,7 +15,9 @@ import com.mit_muzaffarpur.R;
 
 import me.biubiubiu.justifytext.library.JustifyTextView;
 
-//
+/**
+ * Common adapter for club notifications , achievements , announcements
+ */
 @Keep
 public class Adapter extends FirebaseRecyclerAdapter<Model, Adapter.AchievementViewHolder> {
     public Adapter(@NonNull FirebaseRecyclerOptions<Model> options) {

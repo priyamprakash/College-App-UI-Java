@@ -47,6 +47,7 @@ public class ClubActivity extends AppCompatActivity {
         String clubImage = getIntent().getStringExtra("clubImage");
         final String clubId = getIntent().getStringExtra("clubId");
         String clubTagline = getIntent().getStringExtra("clubTagline");
+
         String clubDescription = getIntent().getStringExtra("clubDescription");
         final String fbLink = getIntent().getStringExtra("fb");
         String instaLink = getIntent().getStringExtra("insta");
@@ -55,6 +56,9 @@ public class ClubActivity extends AppCompatActivity {
 
 
 //name and description
+        /**
+         * Club name & Intro
+         */
         TextView club_name = findViewById(R.id.club_name);
         club_name.setText(clubName);
 
@@ -78,6 +82,7 @@ public class ClubActivity extends AppCompatActivity {
 
 /**
  * Tab
+ * UPDATES | ANNOUNCEMENTS  |  EVENTS | FESTS | TEAM | ACHIEVEMENTS  |  ABOUT
  */
 
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
@@ -153,7 +158,10 @@ public class ClubActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Floating Action Button
+     * @param view
+     */
     public void contact(View view) {
         Toast.makeText(getApplicationContext(), "Idhr se email se connect kr denge",
                 Toast.LENGTH_LONG).show();

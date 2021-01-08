@@ -27,9 +27,6 @@ public class FragmentAnnouncements extends Fragment {
     private RecyclerView recyclerViewAnnouncements;
     private Adapter announcementAdapter;
 
-  public FragmentAnnouncements() {
-        // Required empty public constructor
-    }
     String clubId;
 
     @Override

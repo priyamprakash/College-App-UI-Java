@@ -52,7 +52,10 @@ public class FragmentMembers extends Fragment {
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         fragmentTransaction.commit();
 
-
+/**
+ * Tab
+ * FACULTIES | MEMBERS  |  FAMILY | INITIATORS  |
+ */
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

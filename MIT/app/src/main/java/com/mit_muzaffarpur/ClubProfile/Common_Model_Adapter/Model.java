@@ -2,6 +2,10 @@ package com.mit_muzaffarpur.ClubProfile.Common_Model_Adapter;
 
 import androidx.annotation.Keep;
 
+
+/**
+ * Common model for club notifications , achievements , announcements
+ */
 @Keep
 public class Model {
     public String date;
