@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.HomeFragmentElements;
+package com.mit_muzaffarpur.Home;
 
 import androidx.annotation.Keep;
 
@@ -10,7 +10,7 @@ public class ClubModel {
     public String clubDescription;
     public String clubFacebookLink;
     public String clubInstaLink;
-    public String clubLinkedinLink;
+    public String clubLinkedinLink; 
     public String clubTagline;
     public String clubYoutubeLink;
 
