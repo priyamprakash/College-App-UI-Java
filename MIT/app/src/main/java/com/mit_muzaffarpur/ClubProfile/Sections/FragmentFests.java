@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.ClubProfile;
+package com.mit_muzaffarpur.ClubProfile.Sections;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,12 +13,12 @@ import com.mit_muzaffarpur.R;
 
 import static android.content.Context.MODE_PRIVATE;
 
-public class FragmentEvents extends Fragment {
+public class FragmentFests extends Fragment {
 
 
 
-    public FragmentEvents() {
-        // Required empty public constructor
+    public FragmentFests() {
+
     }
 
     String clubId;
@@ -26,11 +26,13 @@ public class FragmentEvents extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_events, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_fests, container, false);
+
 
         SharedPreferences prefs = getContext().getSharedPreferences("PREFS", MODE_PRIVATE);
         clubId = prefs.getString("clubId", "none");
-        return  rootView;
+
+        return rootView;
     }
 }
+

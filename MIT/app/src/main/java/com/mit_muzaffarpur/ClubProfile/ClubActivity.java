@@ -3,8 +3,6 @@ package com.mit_muzaffarpur.ClubProfile;
 import androidx.annotation.Keep;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,9 +15,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
-import com.google.firebase.auth.FirebaseAuth;
+import com.mit_muzaffarpur.ClubProfile.Sections.ClubAchievement.FragmentAchievements;
+import com.mit_muzaffarpur.ClubProfile.Sections.Announcement.FragmentAnnouncements;
+import com.mit_muzaffarpur.ClubProfile.Sections.ClubEvents.FragmentEvents;
+import com.mit_muzaffarpur.ClubProfile.Sections.FragmentFests;
+import com.mit_muzaffarpur.ClubProfile.Sections.Members.FragmentMembers;
+import com.mit_muzaffarpur.ClubProfile.Sections.FragmentUpdates;
 import com.mit_muzaffarpur.R;
 import com.squareup.picasso.Picasso;
 
@@ -30,9 +32,7 @@ public class ClubActivity extends AppCompatActivity {
     private static final String TAG = "ClubActivity";
 
     Fragment selectedfragment = null;
-
     TabLayout tabLayout;
-    FrameLayout frameLayout;
 
 
     @Override
@@ -66,15 +66,15 @@ public class ClubActivity extends AppCompatActivity {
         Picasso.get().load(clubImage).placeholder(R.drawable.image_placeholder).into(club_logo);
 
 
-        ImageView fb = findViewById(R.id.fb);
-        fb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ACTION_VIEW, Uri.parse(fbLink));
-                startActivity(intent);
-
-            }
-        });
+//        ImageView fb = findViewById(R.id.fb);
+//        fb.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(ACTION_VIEW, Uri.parse(fbLink));
+//                startActivity(intent);
+//
+//            }
+//        });
 
 /**
  * Tab
@@ -149,92 +149,6 @@ public class ClubActivity extends AppCompatActivity {
         });
 
 
-        Button announcements = findViewById(R.id.announcements);
-        announcements.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences.Editor editor = getSharedPreferences("PREFS", MODE_PRIVATE).edit();
-                editor.putString("clubId", clubId);
-                editor.apply();
-//                ClubActivity.this.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentAnnouncements()).commit();
-                selectedfragment = new FragmentAnnouncements();
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        selectedfragment).commit();
-
-            }
-        });
-        Button achievements = findViewById(R.id.achievements);
-        achievements.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                SharedPreferences.Editor editor = getSharedPreferences("PREFS", MODE_PRIVATE).edit();
-                editor.putString("clubId", clubId);
-                editor.apply();
-                selectedfragment = new FragmentAchievements();
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        selectedfragment).commit();
-
-
-//                ClubActivity.this.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentAchievements()).commit();
-
-            }
-        });
-        Button events = findViewById(R.id.events);
-        events.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences.Editor editor = getSharedPreferences("PREFS", MODE_PRIVATE).edit();
-                editor.putString("clubId", clubId);
-                editor.apply();
-                selectedfragment = new FragmentEvents();
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        selectedfragment).commit();
-//                ClubActivity.this.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentEvents()).commit();
-
-            }
-        });
-        Button fests = findViewById(R.id.fests);
-        fests.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences.Editor editor = getSharedPreferences("PREFS", MODE_PRIVATE).edit();
-                editor.putString("clubId", clubId);
-                editor.apply();
-                selectedfragment = new FragmentFests();
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        selectedfragment).commit();
-//                ClubActivity.this.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentFests()).commit();
-
-            }
-        });
-        Button updates = findViewById(R.id.updates);
-        updates.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences.Editor editor = getSharedPreferences("PREFS", MODE_PRIVATE).edit();
-                editor.putString("clubId", clubId);
-                editor.apply();
-                selectedfragment = new FragmentUpdates();
-//                ClubActivity.this.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentUpdates()).commit();
-
-            }
-        });
-
-        Button members = findViewById(R.id.members);
-        members.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences.Editor editor = getSharedPreferences("PREFS", MODE_PRIVATE).edit();
-                editor.putString("clubId", clubId);
-                editor.apply();
-                selectedfragment = new FragmentMembers();
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        selectedfragment).commit();
-//                ClubActivity.this.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentMembers()).commit();
-
-            }
-        });
 
 
     }

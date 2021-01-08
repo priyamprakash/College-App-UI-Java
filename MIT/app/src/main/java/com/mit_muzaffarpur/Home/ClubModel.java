@@ -10,7 +10,7 @@ public class ClubModel {
     public String clubDescription;
     public String clubFacebookLink;
     public String clubInstaLink;
-    public String clubLinkedinLink; 
+    public String clubLinkedinLink;
     public String clubTagline;
     public String clubYoutubeLink;
 

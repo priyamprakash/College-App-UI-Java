@@ -69,7 +69,6 @@ public class ClubAdapter extends FirebaseRecyclerAdapter<ClubModel, ClubAdapter.
     }
 
 
-    //view holder reference
     class ClubViewHolder extends RecyclerView.ViewHolder {
 
         TextView clubName ;

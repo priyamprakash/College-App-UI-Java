@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.ClubProfile;
+package com.mit_muzaffarpur.ClubProfile.Common_Model_Adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,23 +17,23 @@ import me.biubiubiu.justifytext.library.JustifyTextView;
 
 //
 @Keep
-public class AchievementAdapter extends FirebaseRecyclerAdapter<AchievementModel, AchievementAdapter.AchievementViewHolder> {
-    public AchievementAdapter(@NonNull FirebaseRecyclerOptions<AchievementModel> options) {
+public class Adapter extends FirebaseRecyclerAdapter<Model, Adapter.AchievementViewHolder> {
+    public Adapter(@NonNull FirebaseRecyclerOptions<Model> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull AchievementAdapter.AchievementViewHolder holder, int position, @NonNull AchievementModel model) {
-        holder.message.setText(model.getAchievementMessage()+"\n");
-        holder.timestamp.setText(model.getAchievementDate());
-        holder.title.setText(model.getAchievementTitle());
+    protected void onBindViewHolder(@NonNull Adapter.AchievementViewHolder holder, int position, @NonNull Model model) {
+        holder.message.setText(model.getMessage()+"\n");
+        holder.timestamp.setText(model.getDate());
+        holder.title.setText(model.getTitle());
 
 
     }
 
     @NonNull
     @Override
-    public AchievementAdapter.AchievementViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Adapter.AchievementViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.achievement_layout, parent, false);
 

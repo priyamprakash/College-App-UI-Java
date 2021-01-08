@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.ClubProfile;
+package com.mit_muzaffarpur.ClubProfile.Sections.ClubAchievement;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,71 +15,65 @@ import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
-import com.mit_muzaffarpur.ClubProfile.Announcements.AnnouncementModel;
+import com.mit_muzaffarpur.ClubProfile.Common_Model_Adapter.Adapter;
+import com.mit_muzaffarpur.ClubProfile.Common_Model_Adapter.Model;
 import com.mit_muzaffarpur.R;
 
 import static android.content.Context.MODE_PRIVATE;
 
 @Keep
-public class FragmentAnnouncements extends Fragment {
+public class FragmentAchievements extends Fragment {
 
-    private RecyclerView recyclerViewAnnouncements;
-    private AnnouncementAdapter announcementAdapter;
+    private RecyclerView recyclerViewAchievements;
+    private Adapter adapter;
 
-  public FragmentAnnouncements() {
+    public FragmentAchievements() {
         // Required empty public constructor
     }
+
     String clubId;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView= inflater.inflate(R.layout.fragment_announcements, container, false);
+        // Inflate the layout for this fragment
+        View rootView = inflater.inflate(R.layout.fragment_achievements, container, false);
 
         SharedPreferences prefs = getContext().getSharedPreferences("PREFS", MODE_PRIVATE);
         clubId = prefs.getString("clubId", "none");
-
         TextView sample = rootView.findViewById(R.id.sample);
-        sample.setText("Club Id:    "+clubId);
+        sample.setText("Club Id:    " + clubId);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        recyclerViewAnnouncements  = rootView.findViewById(R.id.recyclerViewAnnouncements);
+        recyclerViewAchievements = rootView.findViewById(R.id.recyclerViewAchievements);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
         linearLayoutManager.setReverseLayout(true);
         linearLayoutManager.setStackFromEnd(true);
-        recyclerViewAnnouncements.setLayoutManager(linearLayoutManager);
+        recyclerViewAchievements.setLayoutManager(linearLayoutManager);
 
 
+        FirebaseRecyclerOptions<Model> options =
+                new FirebaseRecyclerOptions.Builder<Model>()
+                        .setQuery(FirebaseDatabase
+                                        .getInstance().getReference().child("clubs").child(clubId).child("clubAchievements"),
+                                Model.class).build();
 
-    FirebaseRecyclerOptions<AnnouncementModel> options =
-            new FirebaseRecyclerOptions.Builder<AnnouncementModel>()
-                    .setQuery(FirebaseDatabase
-                                    .getInstance().getReference().child("clubs").child(clubId).child("clubAnnouncements"),
-                            AnnouncementModel.class).build();
+        adapter = new Adapter(options);
+        recyclerViewAchievements.setAdapter(adapter);
 
-
-    announcementAdapter = new AnnouncementAdapter(options);
-    recyclerViewAnnouncements.setAdapter(announcementAdapter);
-
-
-
-      return rootView;
-
+        return rootView;
     }
-    //to start
+
     @Override
     public void onStart() {
         super.onStart();
-        announcementAdapter.startListening();
+        adapter.startListening();
     }
 
-    //to stop
     @Override
     public void onStop() {
         super.onStop();
-        announcementAdapter.stopListening();
+        adapter.stopListening();
     }
-
-
 }
