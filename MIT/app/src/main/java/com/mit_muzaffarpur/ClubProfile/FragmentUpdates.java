@@ -8,8 +8,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.mit_muzaffarpur.R;
+
+import org.w3c.dom.Text;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -31,6 +34,8 @@ public class FragmentUpdates extends Fragment {
 
         SharedPreferences prefs = getContext().getSharedPreferences("PREFS", MODE_PRIVATE);
         clubId = prefs.getString("clubId", "none");
+        TextView sample = rootView.findViewById(R.id.sample);
+        sample.setText(clubId);
         return rootView;
     }
 }

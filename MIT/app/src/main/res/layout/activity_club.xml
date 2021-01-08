@@ -57,7 +57,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/white"
+        android:background="@drawable/half_white_circle"
         android:layout_marginTop="25dp"
         android:padding="10dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
@@ -69,19 +69,6 @@
             android:orientation="vertical">
 
 
-<!--            <TextView-->
-
-<!--                android:id="@+id/club_name"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_gravity="start"-->
-<!--                android:layout_marginStart="20dp"-->
-<!--                android:background="#00000000"-->
-<!--                android:fontFamily="@font/bold"-->
-<!--                android:text="clubName"-->
-<!--                android:textAllCaps="true"-->
-<!--                android:textColor="@color/colorPrimaryDark"-->
-<!--                android:textSize="22sp" />-->
             <TextView
 
                 android:id="@+id/club_name"
@@ -118,6 +105,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -159,9 +147,9 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="5dp"
+                android:layout_height="1dp"
                 android:layerType="software"
-                android:src="@drawable/dotted" />
+                android:src="@color/colorPrimaryDark" />
 
 
 
@@ -169,10 +157,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+
 <HorizontalScrollView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:scrollbars="none"
+    android:visibility="gone"
     >
     <LinearLayout
         android:layout_width="match_parent"
@@ -256,13 +246,59 @@
 </HorizontalScrollView>
 
             </androidx.core.widget.NestedScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                app:tabIndicatorColor="@color/colorPrimaryDark"
+                app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="#000000">
+
+                <com.google.android.material.tabs.TabItem
+                    android:text="Updates"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" />
+                <com.google.android.material.tabs.TabItem
+                    android:text="Announcements"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+                <com.google.android.material.tabs.TabItem
+                    android:text="Events"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+                <com.google.android.material.tabs.TabItem
+                    android:text="Fests"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+                <com.google.android.material.tabs.TabItem
+                    android:text="Team"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+                <com.google.android.material.tabs.TabItem
+                    android:text="Achievements"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+                <com.google.android.material.tabs.TabItem
+                    android:text="About"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+
+
+
+            </com.google.android.material.tabs.TabLayout>
             <FrameLayout
                 android:id="@+id/fragment_container"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@+id/toolbar"
+                android:layout_height="wrap_content"
 
                 />
+        </LinearLayout>
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

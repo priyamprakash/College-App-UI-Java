@@ -30,8 +30,8 @@ public class NewsAdapter extends FirebaseRecyclerAdapter<NewsModel, NewsAdapter.
     @Override
     protected void onBindViewHolder(@NonNull NotificationViewHolder holder, int position, @NonNull NewsModel model) {
 
-
-        holder.title.setText(model.getNotificationTitle());
+        String t = model.getNotificationTitle().substring(0,1).toUpperCase() + model.getNotificationTitle().substring(1);
+        holder.title.setText(t);
         holder.link.setText(model.getNotificationLink());
         holder.desc.setText(model.getNotificationDescription() + "\n");
         holder.timestamp.setText(model.getNotificationTimestamp());
