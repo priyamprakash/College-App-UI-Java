@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.HomeFragmentElements;
+package com.mit_muzaffarpur.Home;
 
 import androidx.annotation.Keep;
 

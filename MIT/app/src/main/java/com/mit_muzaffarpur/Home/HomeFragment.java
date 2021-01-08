@@ -7,21 +7,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
-import com.mit_muzaffarpur.HomeFragmentElements.ClubAdapter;
-import com.mit_muzaffarpur.HomeFragmentElements.ClubModel;
 import com.mit_muzaffarpur.HomeFragmentElements.Club_Cell.Club_Cell_Model;
 import com.mit_muzaffarpur.HomeFragmentElements.Notify.Notify_Adapter;
 import com.mit_muzaffarpur.HomeFragmentElements.Notify.Notify_Model;

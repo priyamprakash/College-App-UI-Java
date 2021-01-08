@@ -1,6 +1,5 @@
 package com.mit_muzaffarpur.Dashboard;
 
-import android.content.pm.PackageInfo;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.mit_muzaffarpur.Dashboard.Alumni.AlumniAdapter;
-import com.mit_muzaffarpur.HomeFragmentElements.ClubModel;
 import com.mit_muzaffarpur.R;
 import com.squareup.picasso.Picasso;
 

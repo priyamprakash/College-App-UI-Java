@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.ClubProfile;
+package com.mit_muzaffarpur.ClubProfile.Sections.Members;
 
 
 import android.view.LayoutInflater;

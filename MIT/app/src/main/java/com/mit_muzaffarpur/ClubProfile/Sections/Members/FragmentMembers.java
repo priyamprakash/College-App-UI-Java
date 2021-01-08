@@ -1,4 +1,4 @@
-package com.mit_muzaffarpur.ClubProfile;
+package com.mit_muzaffarpur.ClubProfile.Sections.Members;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -52,7 +52,10 @@ public class FragmentMembers extends Fragment {
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         fragmentTransaction.commit();
 
-
+/**
+ * Tab
+ * FACULTIES | MEMBERS  |  FAMILY | INITIATORS  |
+ */
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
