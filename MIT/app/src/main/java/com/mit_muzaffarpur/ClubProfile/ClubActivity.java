@@ -3,6 +3,8 @@ package com.mit_muzaffarpur.ClubProfile;
 import androidx.annotation.Keep;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,11 +12,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.mit_muzaffarpur.R;
 import com.squareup.picasso.Picasso;
@@ -25,8 +29,11 @@ import static android.content.Intent.ACTION_VIEW;
 public class ClubActivity extends AppCompatActivity {
     private static final String TAG = "ClubActivity";
 
-    BottomNavigationView bottom_navigation;
     Fragment selectedfragment = null;
+
+    TabLayout tabLayout;
+    FrameLayout frameLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +75,79 @@ public class ClubActivity extends AppCompatActivity {
 
             }
         });
+
+/**
+ * Tab
+ */
+
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+
+// jab kch na selected ho :
+        selectedfragment = new FragmentUpdates();
+        SharedPreferences.Editor editor = getSharedPreferences("PREFS", MODE_PRIVATE).edit();
+        editor.putString("clubId", clubId);
+        editor.apply();
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                selectedfragment).commit();
+
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                // Fragment fragment = null;
+                switch (tab.getPosition()) {
+                    case 0:
+
+                        selectedfragment = new FragmentUpdates();
+
+                        break;
+                    case 1:
+
+                        selectedfragment = new FragmentAnnouncements();
+
+                        break;
+                    case 2:
+
+                        selectedfragment = new FragmentEvents();
+
+                        break;
+                    case 3:
+                        selectedfragment = new FragmentFests();
+
+                        break;
+                    case 4:
+
+                        selectedfragment = new FragmentMembers();
+                        break;
+                    case 5:
+
+                        selectedfragment = new FragmentAchievements();
+
+                        break;
+
+                }
+//                sharing the clubID
+                SharedPreferences.Editor editor = getSharedPreferences("PREFS", MODE_PRIVATE).edit();
+                editor.putString("clubId", clubId);
+                editor.apply();
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        selectedfragment).commit();
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
 
         Button announcements = findViewById(R.id.announcements);
         announcements.setOnClickListener(new View.OnClickListener() {

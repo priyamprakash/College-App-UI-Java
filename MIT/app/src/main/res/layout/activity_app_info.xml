@@ -1,32 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_app"
+    android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
     android:padding="20dp"
     tools:context=".Dashboard.AppInfo">
-
-<View
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#B3FFFFFF"
-
-   />
     <TextView
-        android:layout_marginTop="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="App Info"
+        android:textColor="@color/white"
+        android:fontFamily="@font/normal"
+        android:textSize="20dp"
+        android:textAlignment="center"
+
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/white"
+        android:layout_marginTop="10dp"
+
+        />
+    <TextView
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MIT Muzaffarpur"
+        android:fontFamily="@font/bold"
+        android:textSize="16dp"
+        android:textColor="@color/white"
+
+        />
+    <TextView
         android:layout_marginLeft="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="This ,not the TPO one, is the OFFICIAL app of Mit Muzaffarpur .\n\n\nDevelopers:\nNITISH SHRIVASTAV\nPP\n...."
+        android:text="Developers "
+        android:fontFamily="@font/normal"
+        android:textSize="16dp"
+        android:textColor="@color/white"
+
+        />
+
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Privacy policy"
         android:fontFamily="@font/normal"
         android:textSize="14dp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+
+        />
+   <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Version "
+        android:fontFamily="@font/normal"
+        android:textSize="14dp"
+        android:textColor="@color/white"
 
         />
 
 
 
-</RelativeLayout>
+</LinearLayout>

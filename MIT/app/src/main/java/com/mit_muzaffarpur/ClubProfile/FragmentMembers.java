@@ -44,9 +44,9 @@ public class FragmentMembers extends Fragment {
         fragmentManager = getChildFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
 
-        Bundle arguments = new Bundle();//tukka
-        arguments.putString( "string_key" , clubId);//tukka
-        fragment.setArguments(arguments);//tukka
+        Bundle arguments = new Bundle();
+        arguments.putString( "string_key" , clubId);
+        fragment.setArguments(arguments);
 
         fragmentTransaction.replace(R.id.frameLayout, fragment);
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
@@ -76,9 +76,9 @@ public class FragmentMembers extends Fragment {
                 FragmentManager fm = getChildFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
 
-                Bundle arguments = new Bundle();//tukka
-                arguments.putString( "string_key" , clubId);//tukka
-                fragment.setArguments(arguments);//tukka
+                Bundle arguments = new Bundle();
+                arguments.putString( "string_key" , clubId);
+                fragment.setArguments(arguments);
 
                 ft.replace(R.id.frameLayout, fragment);
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
