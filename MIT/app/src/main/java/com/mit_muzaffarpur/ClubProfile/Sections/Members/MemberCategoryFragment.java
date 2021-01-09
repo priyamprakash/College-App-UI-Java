@@ -40,8 +40,6 @@ public class MemberCategoryFragment extends Fragment {
         recyclerViewMembers = rootView.findViewById(R.id.recyclerViewMembers);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
-//        linearLayoutManager.setReverseLayout(true);
-//        linearLayoutManager.setStackFromEnd(true);
         recyclerViewMembers.setLayoutManager(linearLayoutManager);
 
 
@@ -64,7 +62,6 @@ public class MemberCategoryFragment extends Fragment {
         membersAdapter.startListening();
     }
 
-    //to stop
     @Override
     public void onStop() {
         super.onStop();
