@@ -26,9 +26,6 @@ public class FragmentMembersFaculties extends Fragment {
         Bundle arguments = getArguments();
         String clubId = arguments.getString("string_key");
 
-        TextView testing = rootView.findViewById(R.id.testing);
-        testing.setText("Hello Blank Fragment : " + clubId);
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerViewMembers  = rootView.findViewById(R.id.recyclerViewMembersFaculties);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
