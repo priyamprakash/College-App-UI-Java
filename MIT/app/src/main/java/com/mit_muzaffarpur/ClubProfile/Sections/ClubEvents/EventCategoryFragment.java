@@ -16,8 +16,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.mit_muzaffarpur.ClubProfile.Sections.Members.MemberModel;
 import com.mit_muzaffarpur.ClubProfile.Sections.Members.MembersAdapter;
 import com.mit_muzaffarpur.R;
+
+/**
+ * Common fragment for all types of club Events
+ * Held |  Ongoing  |  Upcoming |
+ */
+
 @Keep
-public class HeldFragment extends Fragment {
+public class EventCategoryFragment extends Fragment {
     private RecyclerView recyclerViewEvents;
     private EventsAdapter eventsAdapter;
     @Override
@@ -28,6 +34,8 @@ public class HeldFragment extends Fragment {
 
         Bundle arguments = getArguments();
         String clubId = arguments.getString("string_key");
+        String event_status =arguments.getString("event_status");
+
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerViewEvents  = rootView.findViewById(R.id.recyclerViewEvents);
@@ -41,7 +49,7 @@ public class HeldFragment extends Fragment {
         FirebaseRecyclerOptions<EventModel> options =
                 new FirebaseRecyclerOptions.Builder<EventModel>()
                         .setQuery(FirebaseDatabase
-                                        .getInstance().getReference().child("clubs").child(clubId).child("clubEvents").child("held"),
+                                        .getInstance().getReference().child("clubs").child(clubId).child("clubEvents").child(event_status),
                                 EventModel.class).build();
 
 

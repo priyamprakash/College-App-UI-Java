@@ -6,9 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.Keep;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,17 +14,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.google.android.material.tabs.TabLayout;
-import com.mit_muzaffarpur.ClubProfile.Sections.Announcement.FragmentAnnouncements;
-import com.mit_muzaffarpur.ClubProfile.Sections.ClubAchievement.FragmentAchievements;
-import com.mit_muzaffarpur.ClubProfile.Sections.FragmentUpdates;
-import com.mit_muzaffarpur.ClubProfile.Sections.Members.FragmentMemberFamily;
-import com.mit_muzaffarpur.ClubProfile.Sections.Members.FragmentMemberInitiators;
-import com.mit_muzaffarpur.ClubProfile.Sections.Members.FragmentMemberMember;
-import com.mit_muzaffarpur.ClubProfile.Sections.Members.FragmentMembersFaculties;
 import com.mit_muzaffarpur.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -37,8 +25,8 @@ public class FragmentEvents extends Fragment {
     Fragment fragment = null;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
-    String clubId;
-
+    String clubId ;
+    String event_status = "held";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -49,12 +37,14 @@ public class FragmentEvents extends Fragment {
         tabLayout=(TabLayout)rootView.findViewById(R.id.tabLayout);
         frameLayout=(FrameLayout)rootView.findViewById(R.id.frameLayout);
 
-        fragment = new HeldFragment();
+        fragment = new EventCategoryFragment();
         fragmentManager = getChildFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
 
         Bundle arguments = new Bundle();
         arguments.putString( "string_key" , clubId);
+        arguments.putString("event_status" ,  event_status);
+
         fragment.setArguments(arguments);
 
         fragmentTransaction.replace(R.id.frameLayout, fragment);
@@ -72,13 +62,16 @@ public class FragmentEvents extends Fragment {
                 // Fragment fragment = null;
                 switch (tab.getPosition()) {
                     case 0:
-                        fragment = new HeldFragment();
+                        fragment = new EventCategoryFragment();
+                        event_status = "held";
                         break;
                     case 1:
-                        fragment = new OngoingFragment();
+                        fragment = new EventCategoryFragment();
+                        event_status = "ongoing";
                         break;
                     case 2:
-                        fragment = new UpcomingFragment();
+                        fragment = new EventCategoryFragment();
+                        event_status = "upcoming";
                         break;
 
                 }
@@ -88,6 +81,8 @@ public class FragmentEvents extends Fragment {
 
                 Bundle arguments = new Bundle();
                 arguments.putString( "string_key" , clubId);
+                arguments.putString("event_status" ,  event_status);
+
                 fragment.setArguments(arguments);
 
                 ft.replace(R.id.frameLayout, fragment);

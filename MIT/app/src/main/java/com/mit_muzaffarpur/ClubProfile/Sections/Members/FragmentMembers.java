@@ -28,6 +28,7 @@ public class FragmentMembers extends Fragment {
     FragmentTransaction fragmentTransaction;
 
     String clubId;
+    String memberType = "faculties"; //first tab ke naam se initiate
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -40,12 +41,14 @@ public class FragmentMembers extends Fragment {
         tabLayout=(TabLayout)rootView.findViewById(R.id.tabLayout);
         frameLayout=(FrameLayout)rootView.findViewById(R.id.frameLayout);
 
-        fragment = new FragmentMembersFaculties();
+        fragment = new MemberCategoryFragment();
         fragmentManager = getChildFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
 
         Bundle arguments = new Bundle();
         arguments.putString( "string_key" , clubId);
+        arguments.putString("member_type", memberType);
+
         fragment.setArguments(arguments);
 
         fragmentTransaction.replace(R.id.frameLayout, fragment);
@@ -63,16 +66,20 @@ public class FragmentMembers extends Fragment {
                 // Fragment fragment = null;
                 switch (tab.getPosition()) {
                     case 0:
-                        fragment = new FragmentMembersFaculties();
+                        fragment = new MemberCategoryFragment();
+                        memberType = "faculties";
                         break;
                     case 1:
-                        fragment = new FragmentMemberMember();
+                        fragment = new MemberCategoryFragment();
+                        memberType = "members";
                         break;
                     case 2:
-                        fragment = new FragmentMemberFamily();
+                        fragment = new MemberCategoryFragment();
+                        memberType = "family";
                         break;
                     case 3:
-                        fragment = new FragmentMemberInitiators();
+                        fragment = new MemberCategoryFragment();
+                        memberType = "initiators";
                         break;
                 }
 
@@ -81,6 +88,8 @@ public class FragmentMembers extends Fragment {
 
                 Bundle arguments = new Bundle();
                 arguments.putString( "string_key" , clubId);
+                arguments.putString("member_type", memberType);
+
                 fragment.setArguments(arguments);
 
                 ft.replace(R.id.frameLayout, fragment);
