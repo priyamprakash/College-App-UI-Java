@@ -1,71 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="10dp">
 
 
-    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        app:neomorph_corner_radius="16dp"
-        app:neomorph_elevation="7dp"
-        app:neomorph_highlight_color="@color/neomorph_highlight_color"
-        app:neomorph_shadow_color="@color/neomorph_shadow_color"
-        app:neomorph_shadow_type="outer"
-        app:neomorph_view_type="rectangular">
+        android:layout_margin="5dp"
+        android:background="@color/neomorph_background_color"
+        android:padding="2dp"
+        app:cardCornerRadius="16dp">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp">
+            android:background="@color/white"
+            android:orientation="vertical">
 
-            <RelativeLayout
+
+            <TextView
+                android:id="@+id/title"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:fontFamily="@font/rubik_bold"
+                android:text="Title"
+                android:layout_marginVertical="2dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/dotted" />
+            <TextView
+                android:id="@+id/timestamp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_marginVertical="2dp"
+                android:text="5 Jan"
+                android:layout_marginHorizontal="5dp"
+                android:textColor="@color/colorAccent"
+                android:textSize="12dp" />
+            <me.biubiubiu.justifytext.library.JustifyTextView
+                android:id="@+id/message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="all"
+                android:layout_marginVertical="2dp"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/normal"
+                android:text="Description of the alumniModel is to be provided here through firebase recycler adapter .\n"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14dp" />
 
 
-                    <TextView
-                        android:id="@+id/title"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/bold"
-                        android:text="Title"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-                    <me.biubiubiu.justifytext.library.JustifyTextView
-                        android:id="@+id/message"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:autoLink="web"
-                        android:fontFamily="@font/normal"
-                        android:text="Description of the alumniModel is to be provided here through firebase recycler adapter .\n"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="14dp"
-                        />
-                    <TextView
-                        android:id="@+id/timestamp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="DATE: 01-11-2020 "
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="16dp"
-                        />
 
-                </LinearLayout>
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
 
 
 </LinearLayout>
