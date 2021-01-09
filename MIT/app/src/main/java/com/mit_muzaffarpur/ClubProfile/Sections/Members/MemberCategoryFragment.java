@@ -15,35 +15,40 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 import com.mit_muzaffarpur.R;
 
+/**
+ * Common fragment for all category of club members
+ * Faculties |  Members  |  Family  | Initiators  |
+ */
 @Keep
-public class FragmentMemberFamily extends Fragment {
+public class MemberCategoryFragment extends Fragment {
     private RecyclerView recyclerViewMembers;
     private MembersAdapter membersAdapter;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_member_family, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_member_category, container, false);
+
         Bundle arguments = getArguments();
         String clubId = arguments.getString("string_key");
-
-//        TextView testing = rootView.findViewById(R.id.testing);
-//        testing.setText("Hello Blank Fragment : " + clubId);
+        String memberType = arguments.getString("member_type");
 
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        recyclerViewMembers = rootView.findViewById(R.id.recyclerViewMembersFamily);
+        recyclerViewMembers = rootView.findViewById(R.id.recyclerViewMembers);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
-        linearLayoutManager.setReverseLayout(true);
-        linearLayoutManager.setStackFromEnd(true);
+//        linearLayoutManager.setReverseLayout(true);
+//        linearLayoutManager.setStackFromEnd(true);
         recyclerViewMembers.setLayoutManager(linearLayoutManager);
 
 
         FirebaseRecyclerOptions<MemberModel> options =
                 new FirebaseRecyclerOptions.Builder<MemberModel>()
                         .setQuery(FirebaseDatabase
-                                        .getInstance().getReference().child("clubs").child(clubId).child("clubMembers").child("family"),
+                                        .getInstance().getReference().child("clubs").child(clubId).child("clubMembers").child(memberType),
                                 MemberModel.class).build();
 
 
@@ -52,7 +57,6 @@ public class FragmentMemberFamily extends Fragment {
 
         return rootView;
     }
-
 
     @Override
     public void onStart() {
