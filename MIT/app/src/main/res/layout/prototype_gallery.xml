@@ -28,6 +28,7 @@
                 android:scaleType="fitXY"
                 app:riv_corner_radius="2dp"
                 android:layout_margin="1dp"/>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

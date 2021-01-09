@@ -27,9 +27,13 @@ public class Gallery extends AppCompatActivity {
         setContentView(R.layout.activity_gallery);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerGallery);
+
         recyclerView.setHasFixedSize(true);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);//grid recycler
+        gridLayoutManager.setReverseLayout(true);//to reverse the order of images
+//        gridLayoutManager.setStackFromEnd(true); // GridLayoutManager does not support stack from end bro
         recyclerView.setLayoutManager(gridLayoutManager);
+
 
 
         FirebaseRecyclerOptions<GalleryModel> options =
