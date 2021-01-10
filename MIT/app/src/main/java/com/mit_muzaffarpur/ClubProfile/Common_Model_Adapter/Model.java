@@ -13,6 +13,7 @@ public class Model {
     public String message;
     public String title;
     public String link;
+    public String clicktext;
 
 
     @Override
@@ -23,8 +24,11 @@ public class Model {
                 ", message='" + message + '\'' +
                 ", title='" + title + '\'' +
                 ", link='" + link + '\'' +
+                ", clicktext='" + clicktext + '\'' +
                 '}';
     }
+
+
 
     public String getDate() {
         return date;
@@ -64,5 +68,13 @@ public class Model {
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    public String getClicktext() {
+        return clicktext;
+    }
+
+    public void setClicktext(String clicktext) {
+        this.clicktext = clicktext;
     }
 }
