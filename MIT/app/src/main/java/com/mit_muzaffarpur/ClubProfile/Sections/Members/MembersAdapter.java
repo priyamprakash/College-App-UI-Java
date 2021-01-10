@@ -29,7 +29,7 @@ public class MembersAdapter extends FirebaseRecyclerAdapter<MemberModel, Members
 
 
         holder.Designation.setText(model.getMemberDesignation());
-        holder.Department.setText(model.getMemberDepartment());
+//        holder.Department.setText(model.getMemberDepartment());
         holder.Attendance.setText(model.getMemberAttendance());
         holder.Name.setText(model.getMemberName());
 
@@ -56,7 +56,7 @@ public class MembersAdapter extends FirebaseRecyclerAdapter<MemberModel, Members
 
 
             Attendance = itemView.findViewById(R.id.Attendance);
-            Department = itemView.findViewById(R.id.Department);
+//            Department = itemView.findViewById(R.id.Department);
             Designation = itemView.findViewById(R.id.Designation);
             Name = itemView.findViewById(R.id.Name);
             Image  = itemView.findViewById(R.id.Image);

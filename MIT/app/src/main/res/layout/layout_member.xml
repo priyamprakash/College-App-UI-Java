@@ -6,16 +6,6 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        app:neomorph_corner_radius="16dp"
-        app:neomorph_elevation="7dp"
-        app:neomorph_highlight_color="@color/neomorph_highlight_color"
-        app:neomorph_shadow_color="@color/neomorph_shadow_color"
-        app:neomorph_shadow_type="outer"
-        app:neomorph_view_type="rectangular">
 
         <androidx.cardview.widget.CardView
 
@@ -48,8 +38,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:autoLink="email"
-                        android:fontFamily="@font/normal"
-                        android:text="priyamprakash99gmail.com"
+                        android:fontFamily="@font/rubik_bold"
+                        android:text="Priyam Prakash"
                         android:textAlignment="center"
                         android:textColor="#000000"
                         android:textSize="16sp" />
@@ -63,20 +53,21 @@
                         android:text="Title"
                         android:textAlignment="center"
                         android:textColor="#000"
-                        android:textSize="16sp"
+                        android:textSize="12sp"
                         android:textStyle="bold" />
-
-
                     <TextView
-                        android:id="@+id/Department"
+                        android:id="@+id/designation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
                         android:fontFamily="@font/normal"
-                        android:text="Department"
+                        android:text="Title"
                         android:textAlignment="center"
-                        android:textColor="#000000"
-                        android:textSize="14sp" />
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
 
                     <TextView
                         android:id="@+id/Designation"
@@ -95,5 +86,4 @@
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
-    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
 </LinearLayout>
