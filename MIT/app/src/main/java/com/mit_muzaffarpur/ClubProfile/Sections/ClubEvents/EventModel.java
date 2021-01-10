@@ -13,7 +13,6 @@ public class EventModel {
     public String title;
     public String link;
 
-
     @Override
     public String toString() {
         return "EventModel{" +

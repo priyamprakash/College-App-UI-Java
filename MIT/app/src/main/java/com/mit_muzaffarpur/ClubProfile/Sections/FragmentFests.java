@@ -32,6 +32,9 @@ public class FragmentFests extends Fragment {
         SharedPreferences prefs = getContext().getSharedPreferences("PREFS", MODE_PRIVATE);
         clubId = prefs.getString("clubId", "none");
 
+        
+
+
         return rootView;
     }
 }
