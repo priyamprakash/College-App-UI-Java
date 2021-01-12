@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Keep;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -37,13 +38,17 @@ public class EventCategoryFragment extends Fragment {
         String event_status =arguments.getString("event_status");
 
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        recyclerViewEvents  = rootView.findViewById(R.id.recyclerViewEvents);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+//        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+//        linearLayoutManager.setReverseLayout(true);
+//        linearLayoutManager.setStackFromEnd(true);
+//        recyclerViewEvents.setLayoutManager(linearLayoutManager);
 
-        linearLayoutManager.setReverseLayout(true);
-        linearLayoutManager.setStackFromEnd(true);
-        recyclerViewEvents.setLayoutManager(linearLayoutManager);
+        recyclerViewEvents  = rootView.findViewById(R.id.recyclerViewEvents);
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),2);//grid recycler
+        gridLayoutManager.setReverseLayout(true);
+        recyclerViewEvents.setLayoutManager(gridLayoutManager);
 
 
         FirebaseRecyclerOptions<EventModel> options =
@@ -53,7 +58,7 @@ public class EventCategoryFragment extends Fragment {
                                 EventModel.class).build();
 
 
-        eventsAdapter = new EventsAdapter(options);
+        eventsAdapter = new EventsAdapter(options, 1);
         recyclerViewEvents.setAdapter(eventsAdapter);
 
         return  rootView;

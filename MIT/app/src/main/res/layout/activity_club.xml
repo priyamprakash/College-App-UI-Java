@@ -11,7 +11,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
         android:theme="@style/AppTheme">
 
@@ -26,39 +26,21 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/club_logo"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_margin = "15dp"
                 android:layout_gravity="center|end"
-                android:layout_margin="20dp"
-                android:layout_marginBottom="15dp"
                 app:layout_collapseMode="pin" />
 
-            <!--            <androidx.appcompat.widget.Toolbar-->
-            <!--                android:id="@+id/toolbar"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="?attr/actionBarSize"-->
-            <!--                app:layout_collapseMode="pin" />-->
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
-<!--    <TextView-->
 
-<!--        android:id="@+id/club_name"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="start"-->
-<!--        android:layout_marginStart="30dp"-->
-<!--        android:background="#00000000"-->
-<!--        android:fontFamily="@font/normal"-->
-<!--        android:text="clubName"-->
-<!--        android:textAllCaps="true"-->
-<!--        android:textColor="@color/colorPrimaryDark"-->
-<!--        android:textSize="18sp" />-->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/half_white_circle"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="5dp"
         android:padding="10dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
@@ -117,6 +99,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:background="@drawable/half_white_circle"
+
             >
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabLayout"

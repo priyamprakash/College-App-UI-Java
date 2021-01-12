@@ -30,6 +30,7 @@ public class Adapter extends FirebaseRecyclerAdapter<Model, Adapter.AchievementV
 
     @Override
     protected void onBindViewHolder(@NonNull Adapter.AchievementViewHolder holder, int position, @NonNull final Model model) {
+
         holder.message.setText("" + model.getMessage() + "\n");
         holder.timestamp.setText(model.getDate());
         holder.title.setText(model.getTitle());

@@ -57,14 +57,11 @@ public class Alumni extends AppCompatActivity {
 
     }
 
-    //to start
     @Override
     protected void onStart() {
         super.onStart();
         adapter.startListening();
     }
-
-    //to stop
     @Override
     protected void onStop() {
         super.onStop();
