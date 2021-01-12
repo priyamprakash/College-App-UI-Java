@@ -2,15 +2,20 @@ package com.mit_muzaffarpur.LoginSignup;
 
 import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +25,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
@@ -222,8 +228,90 @@ public class LoginActivity extends AppCompatActivity {
                         }
 
 
-                        // ...
                     }
                 });
+    }
+
+    //-------FORGOT PASSWORD-------
+
+
+    public void forgot(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("Recover Password");
+
+        //set layout linear layout
+        LinearLayout linearLayout = new LinearLayout(this);
+        final EditText emailEt = new EditText(this);
+        emailEt.setHint("Email");
+        emailEt.setHintTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        emailEt.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        emailEt.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+        emailEt.setMinEms(16);
+
+
+        linearLayout.addView(emailEt);
+        linearLayout.setPadding(10, 10, 10, 10);
+        builder.setView(linearLayout);
+
+
+        builder.setPositiveButton("Recover", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                //input email
+                String email = emailEt.getText().toString().trim();
+                beginRecovery(email);
+
+
+
+            }
+
+
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //dismiss dialog
+                dialog.dismiss();
+
+            }
+        });
+
+        builder.create().show();
+    }
+
+
+    private void beginRecovery(String email) {
+
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(LoginActivity.this, "Please Enter Email", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else {
+            Toast.makeText(LoginActivity.this, "Sending email...", Toast.LENGTH_SHORT).show();
+        }
+        auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+                if (task.isSuccessful()) {
+                    Toast.makeText(LoginActivity.this, "Email sent", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(LoginActivity.this, "Failed...", Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                //get and show proper error message
+                Toast.makeText(LoginActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+
+
+        });
     }
 }

@@ -98,6 +98,20 @@
         android:layout_marginTop="15dp"
         />
 
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"
+            android:background="#00FFFFFF"
+            android:fontFamily="@font/normal"
+            android:onClick="forgot"
+
+            android:text="Forgot password "
+            android:textColor="@color/colorPrimaryDark"
+ />
+
+
 
 
     </LinearLayout>
@@ -119,5 +133,6 @@
         android:elevation="8dp"
         android:text="Sign In with Google"
         android:textColor="#fff" />
+
     </LinearLayout>
 </LinearLayout>
