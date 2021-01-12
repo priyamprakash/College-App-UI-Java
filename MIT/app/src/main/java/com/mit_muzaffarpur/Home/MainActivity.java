@@ -21,9 +21,13 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -55,18 +59,18 @@ import java.util.Arrays;
 import java.util.Objects;
 
 @Keep
-public class MainActivity extends AppCompatActivity implements Drawer_Adapter.OnItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements Drawer_Adapter.OnItemSelectedListener {
 
-    final String TAG ="Main_Meow";
-    private int REQUEST_CODE = 11 ;
+    final String TAG = "Main_Meow";
+    private int REQUEST_CODE = 11;
 
     MeowBottomNavigation meo;
-    private final static int ID_LEFT=1;
-    private final static int ID_HOME=2;
-    private final static int ID_NOTIFICATION=3;
+    private final static int ID_LEFT = 1;
+    private final static int ID_HOME = 2;
+    private final static int ID_NOTIFICATION = 3;
     private final static int ID_NEWS = 4;
 
-//---------------------------------------------------
+    //---------------------------------------------------
     private static final int POS_DASHBOARD = 0;
     private static final int POS_ABOUT = 1;
     private static final int POS_APP_INFO = 3;
@@ -77,11 +81,25 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
     private Drawable[] screenIcons;
 
     private SlidingRootNav slidingRootNav;
+    TextView name, mail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_meow);
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+//----------------------IF YOU WANT TO DISPLAY THE NAME AND GMAIL PROFILE PIC
+//        Button logout = findViewById(R.id.logout);
+//        name = findViewById(R.id.name);
+//        mail = findViewById(R.id.mail);
+//
+//
+//        GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(this);
+//        if (signInAccount != null) {
+//            name.setText(signInAccount.getDisplayName());
+//            mail.setText(signInAccount.getEmail());
+//        }
 
         /**
          * PUSH NOTIFICATIONS, SUBSCRIBING TO GENERAL TOPIC
@@ -122,14 +140,11 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
         appUpdateInfoTask.addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
             @Override
             public void onSuccess(AppUpdateInfo result) {
-                if(result.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                        && result.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE))
-                {
-                    try{
-                        appUpdateManager.startUpdateFlowForResult(result ,AppUpdateType.IMMEDIATE,MainActivity.this , REQUEST_CODE);
-                    }
-                    catch (IntentSender.SendIntentException e)
-                    {
+                if (result.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                        && result.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+                    try {
+                        appUpdateManager.startUpdateFlowForResult(result, AppUpdateType.IMMEDIATE, MainActivity.this, REQUEST_CODE);
+                    } catch (IntentSender.SendIntentException e) {
                         e.printStackTrace();
                     }
 
@@ -212,12 +227,11 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
 
         drawer_adapter.setListener(this);
 
-        meo=(MeowBottomNavigation)findViewById(R.id.bottom_nav);
-        meo.add(new MeowBottomNavigation.Model(1,R.drawable.ic_dashboard));
-        meo.add(new MeowBottomNavigation.Model(2,R.drawable.ic_home));
-        meo.add(new MeowBottomNavigation.Model(3,R.drawable.ic_notifications));
-        meo.add(new MeowBottomNavigation.Model(4,R.drawable.ic_news));
-
+        meo = (MeowBottomNavigation) findViewById(R.id.bottom_nav);
+        meo.add(new MeowBottomNavigation.Model(1, R.drawable.ic_dashboard));
+        meo.add(new MeowBottomNavigation.Model(2, R.drawable.ic_home));
+        meo.add(new MeowBottomNavigation.Model(3, R.drawable.ic_notifications));
+        meo.add(new MeowBottomNavigation.Model(4, R.drawable.ic_news));
 
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
@@ -241,37 +255,38 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
             @Override
             public void onShowItem(MeowBottomNavigation.Model item) {
                 Fragment select_fragment = null;
-                switch (item.getId()){
+                switch (item.getId()) {
                     case ID_LEFT:
-                        select_fragment=new DashboardFragment();
+                        select_fragment = new DashboardFragment();
                         break;
                     case ID_HOME:
-                        select_fragment=new HomeFragment();
+                        select_fragment = new HomeFragment();
                         break;
                     case ID_NOTIFICATION:
-                        select_fragment=new NotificationFragment();
+                        select_fragment = new NotificationFragment();
                         break;
                     case ID_NEWS:
                         select_fragment = new NewsFragment();
                         break;
-                        default:
-                        select_fragment=new HomeFragment();
+                    default:
+                        select_fragment = new HomeFragment();
                         break;
 
                 }
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,select_fragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, select_fragment).commit();
             }
         });
 
 
     }
+
     //for app update code
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == REQUEST_CODE){
-            Toast.makeText(this , "Start DOWNLOAD"  , Toast.LENGTH_SHORT).show();
-            if(requestCode != REQUEST_CODE){
+        if (requestCode == REQUEST_CODE) {
+            Toast.makeText(this, "Start DOWNLOAD", Toast.LENGTH_SHORT).show();
+            if (requestCode != REQUEST_CODE) {
                 Log.d(TAG, "onActivityResult: " + resultCode);
 
             }
@@ -279,6 +294,7 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
 
 
     }
+
     private DrawerItem createItemFor(int position) {
         return new SimpleItem(screenIcons[position], screenTitles[position])
                 .withNormalIconTint(color(R.color.colorPrimaryDark))
@@ -324,8 +340,7 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
         }
 
 
-        if(position == POS_APP_INFO)
-        {
+        if (position == POS_APP_INFO) {
             Intent intent = new Intent(getBaseContext(), AppInfo.class);
             startActivity(intent);
         }
@@ -334,8 +349,7 @@ public class MainActivity extends AppCompatActivity implements Drawer_Adapter.On
                     Toast.LENGTH_LONG).show();
 
         }
-        if(position == POS_PROFILE)
-        {
+        if (position == POS_PROFILE) {
             Toast.makeText(getApplicationContext(), "User Profile",
                     Toast.LENGTH_LONG).show();
         }

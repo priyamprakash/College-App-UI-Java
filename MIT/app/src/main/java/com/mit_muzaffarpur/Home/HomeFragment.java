@@ -16,11 +16,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.mit_muzaffarpur.HomeFragmentElements.Club_Cell.Club_Cell_Model;
 import com.mit_muzaffarpur.HomeFragmentElements.Notify.Notify_Adapter;
 import com.mit_muzaffarpur.HomeFragmentElements.Notify.Notify_Model;
+import com.mit_muzaffarpur.LoginSignup.LoginActivity;
 import com.mit_muzaffarpur.LoginSignup.StartActivity;
 import com.mit_muzaffarpur.R;
 
@@ -46,14 +49,27 @@ public class HomeFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.home, container, false);
 
         logout = rootView.findViewById(R.id.logout);
+
+
+        GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(getContext());
+        if(signInAccount != null){
+//            name.setText(signInAccount.getDisplayName());
+//            mail.setText(signInAccount.getEmail());
+
+        }
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getActivity(), StartActivity.class)
+                startActivity(new Intent(getActivity(), LoginActivity.class)//StartActivity tha  pehle
                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                getActivity().finish();//tukka , purpose - logout click krne pr login activity pr jaye lekin udhar back press krne pr vaps idhr na aaye
+
+
             }
         });
+
+
         /**
          profile pic ,email se utthakr chhipkana hai , sath me first name bhi
          */
@@ -135,5 +151,4 @@ public class HomeFragment extends Fragment {
         Log.d(TAG, "onStop: " + "stop");
         clubAdapter.stopListening();
     }
-
 }
