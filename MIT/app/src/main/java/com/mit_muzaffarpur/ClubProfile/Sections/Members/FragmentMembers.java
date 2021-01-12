@@ -27,7 +27,7 @@ public class FragmentMembers extends Fragment {
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
 
-    String clubId;
+    String clubId ,clubImage;
     String memberType = "faculties"; //first tab ke naam se initiate
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,6 +37,7 @@ public class FragmentMembers extends Fragment {
 
         SharedPreferences prefs = getContext().getSharedPreferences("PREFS", MODE_PRIVATE);
         clubId = prefs.getString("clubId", "none");
+        clubImage = prefs.getString("clubImage" ,clubImage);
 
         tabLayout=(TabLayout)rootView.findViewById(R.id.tabLayout);
         frameLayout=(FrameLayout)rootView.findViewById(R.id.frameLayout);
@@ -89,6 +90,7 @@ public class FragmentMembers extends Fragment {
                 Bundle arguments = new Bundle();
                 arguments.putString( "string_key" , clubId);
                 arguments.putString("member_type", memberType);
+                arguments.putString("club_image" , clubImage);
 
                 fragment.setArguments(arguments);
 

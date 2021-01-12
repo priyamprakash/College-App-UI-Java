@@ -27,7 +27,7 @@ public class FragmentAnnouncements extends Fragment {
     private RecyclerView recyclerViewAnnouncements;
     private Adapter announcementAdapter;
 
-    String clubId;
+    String clubId,clubImage;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,6 +36,8 @@ public class FragmentAnnouncements extends Fragment {
 
         SharedPreferences prefs = getContext().getSharedPreferences("PREFS", MODE_PRIVATE);
         clubId = prefs.getString("clubId", "none");
+        clubImage = prefs.getString("clubImage" ,clubImage);
+
 
         TextView sample = rootView.findViewById(R.id.sample);
         sample.setText("Club Id:    "+clubId);

@@ -4,110 +4,110 @@ import androidx.annotation.Keep;
 
 @Keep
 public class MemberModel {
-    public String memberAttendance;
-    public String memberDepartment;
-    public String memberDesignation;
-    public String memberLinkedin;
-    public String memberMail;
-    public String memberName;
-    public String memberPoints;
-    public String memberImage;
-    public String memberQualification;
-    public String memberStatus;
+    public String attendance;
+    public String department;
+    public String designation;
+    public String linkedin;
+    public String mail;
+    public String name;
+    public String points;
+    public String image;
+    public String qualification;
+    public String status;
 
     @Override
     public String toString() {
         return "MemberModel{" +
-                "memberAttendance='" + memberAttendance + '\'' +
-                ", memberDepartment='" + memberDepartment + '\'' +
-                ", memberDesignation='" + memberDesignation + '\'' +
-                ", memberLinkedin='" + memberLinkedin + '\'' +
-                ", memberMail='" + memberMail + '\'' +
-                ", memberName='" + memberName + '\'' +
-                ", memberPoints='" + memberPoints + '\'' +
-                ", memberImage='" + memberImage + '\'' +
-                ", memberQualification='" + memberQualification + '\'' +
-                ", memberStatus='" + memberStatus + '\'' +
+                "attendance='" + attendance + '\'' +
+                ", department='" + department + '\'' +
+                ", designation='" + designation + '\'' +
+                ", linkedin='" + linkedin + '\'' +
+                ", mail='" + mail + '\'' +
+                ", name='" + name + '\'' +
+                ", points='" + points + '\'' +
+                ", image='" + image + '\'' +
+                ", qualification='" + qualification + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 
-    public String getMemberAttendance() {
-        return memberAttendance;
+    public String getAttendance() {
+        return attendance;
     }
 
-    public void setMemberAttendance(String memberAttendance) {
-        this.memberAttendance = memberAttendance;
+    public void setAttendance(String attendance) {
+        this.attendance = attendance;
     }
 
-    public String getMemberDepartment() {
-        return memberDepartment;
+    public String getDepartment() {
+        return department;
     }
 
-    public void setMemberDepartment(String memberDepartment) {
-        this.memberDepartment = memberDepartment;
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
-    public String getMemberDesignation() {
-        return memberDesignation;
+    public String getDesignation() {
+        return designation;
     }
 
-    public void setMemberDesignation(String memberDesignation) {
-        this.memberDesignation = memberDesignation;
+    public void setDesignation(String designation) {
+        this.designation = designation;
     }
 
-    public String getMemberLinkedin() {
-        return memberLinkedin;
+    public String getLinkedin() {
+        return linkedin;
     }
 
-    public void setMemberLinkedin(String memberLinkedin) {
-        this.memberLinkedin = memberLinkedin;
+    public void setLinkedin(String linkedin) {
+        this.linkedin = linkedin;
     }
 
-    public String getMemberMail() {
-        return memberMail;
+    public String getMail() {
+        return mail;
     }
 
-    public void setMemberMail(String memberMail) {
-        this.memberMail = memberMail;
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
-    public String getMemberName() {
-        return memberName;
+    public String getName() {
+        return name;
     }
 
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getMemberPoints() {
-        return memberPoints;
+    public String getPoints() {
+        return points;
     }
 
-    public void setMemberPoints(String memberPoints) {
-        this.memberPoints = memberPoints;
+    public void setPoints(String points) {
+        this.points = points;
     }
 
-    public String getMemberImage() {
-        return memberImage;
+    public String getImage() {
+        return image;
     }
 
-    public void setMemberImage(String memberImage) {
-        this.memberImage = memberImage;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public String getMemberQualification() {
-        return memberQualification;
+    public String getQualification() {
+        return qualification;
     }
 
-    public void setMemberQualification(String memberQualification) {
-        this.memberQualification = memberQualification;
+    public void setQualification(String qualification) {
+        this.qualification = qualification;
     }
 
-    public String getMemberStatus() {
-        return memberStatus;
+    public String getStatus() {
+        return status;
     }
 
-    public void setMemberStatus(String memberStatus) {
-        this.memberStatus = memberStatus;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

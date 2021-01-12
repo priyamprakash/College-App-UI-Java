@@ -10,10 +10,15 @@
     <color name="white">#FFFFFF</color>
     <color name="pink">#F89FBD</color>
     <color name="dark_brown">#492620</color>
+    <color name="light_font">#FBFBFB</color>
+    <color name="grey_font">#ff9e9e9e</color>
+    <color name="text_shadow">#7FC5BBBB</color>
+    <color name="text_shadow_white">#FFFFFF</color>
 
-<!--   DARK YELLOW:  FFBF00-->
-<!--PERFECT BLUE FOR COLOR ACCENT: 2196F3-->
 </resources>
-<!--252827-->
-<!--C89900-->
-<!--FBDD80-->
+
+    <!--252827-->
+    <!--C89900-->
+    <!--FBDD80-->
+    <!--   DARK YELLOW:  FFBF00-->
+    <!--PERFECT BLUE FOR COLOR ACCENT: 2196F3-->

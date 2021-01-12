@@ -17,6 +17,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.mit_muzaffarpur.R;
 
 import static android.content.Context.MODE_PRIVATE;
+import static java.lang.Thread.sleep;
 
 @Keep
 public class FragmentEvents extends Fragment {
@@ -59,8 +60,10 @@ public class FragmentEvents extends Fragment {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+
                 // Fragment fragment = null;
                 switch (tab.getPosition()) {
+
                     case 0:
                         fragment = new EventCategoryFragment();
                         event_status = "held";

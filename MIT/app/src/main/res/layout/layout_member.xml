@@ -7,83 +7,92 @@
     android:orientation="vertical">
 
 
-        <androidx.cardview.widget.CardView
+    <androidx.cardview.widget.CardView
 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:cardCornerRadius="6dp">
+
+
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:cardCornerRadius="6dp"
-            app:contentPadding="3dp">
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@color/white"
+                android:elevation="15dp"
+                app:neomorph_background_color="@color/neomorph_background_color"
+                app:neomorph_highlight_color="@color/neomorph_shadow_color"
+                app:neomorph_shadow_color="#817A7A"
+                app:neomorph_shadow_type="outer"
+                app:neomorph_view_type="rectangular">
+
+
+                      <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:scaleType="fitXY"
+                            app:riv_corner_radius="10dp"
+                            />
+
+            </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/Image"
-                    android:layout_width="140dp"
-                    android:layout_height="140dp"
-                    android:layout_centerHorizontal="true" />
-
-
-                <LinearLayout
+                <TextView
+                    android:id="@+id/Name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/Name"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:autoLink="email"
-                        android:fontFamily="@font/rubik_bold"
-                        android:text="Priyam Prakash"
-                        android:textAlignment="center"
-                        android:textColor="#000000"
-                        android:textSize="16sp" />
-                    <TextView
-                        android:id="@+id/Attendance"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/normal"
-                        android:text="Title"
-                        android:textAlignment="center"
-                        android:textColor="#000"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:id="@+id/designation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/normal"
-                        android:text="Title"
-                        android:textAlignment="center"
-                        android:textColor="#000"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                    android:layout_marginStart="10dp"
+                    android:autoLink="email"
+                    android:maxLines="1"
+                    android:fontFamily="@font/rubik_bold"
+                    android:text="Priyam Prakash"
+                    android:textAlignment="viewStart"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
 
 
-                    <TextView
-                        android:id="@+id/Designation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/normal"
-                        android:text="rat"
-                        android:textAlignment="center"
-                        android:textSize="12sp" />
+                    android:shadowColor="@color/text_shadow"
+                    android:shadowDx="20"
+                    android:shadowDy="10"
+                    android:shadowRadius="4"/>
 
-
-
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/designation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/normal"
+                    android:text="designation"
+                    android:elevation="15dp"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#000"
+                    android:textSize="14sp" />
 
 
             </LinearLayout>
+        </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:layout_marginVertical="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#838080"
+        />
 </LinearLayout>
