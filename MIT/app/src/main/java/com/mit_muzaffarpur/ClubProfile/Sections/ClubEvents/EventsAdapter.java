@@ -36,7 +36,7 @@ public class EventsAdapter extends FirebaseRecyclerAdapter<EventModel, EventsAda
     protected void onBindViewHolder(@NonNull EventViewHolder holder, int position, @NonNull EventModel model) {
 
         holder.title.setText(model.getTitle());
-        Picasso.get().load(model.getImage()).placeholder(R.drawable.image_placeholder).into(holder.image);
+        Picasso.get().load(model.getImage()).placeholder(R.drawable.placeholder_image).into(holder.image);
 
         Log.d("TAG", "onBindViewHolder: " + a);
 

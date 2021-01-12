@@ -24,7 +24,7 @@ import static android.content.Context.MODE_PRIVATE;
 public class FragmentUpdates extends Fragment {
     private RecyclerView recyclerViewUpdates;
     private Adapter announcementAdapter;
-    String clubId;
+    String clubId , clubImage;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,6 +34,8 @@ public class FragmentUpdates extends Fragment {
 
         SharedPreferences prefs = getContext().getSharedPreferences("PREFS", MODE_PRIVATE);
         clubId = prefs.getString("clubId", "none");
+        clubImage = prefs.getString("clubImage" ,clubImage);
+
         TextView sample = rootView.findViewById(R.id.sample);
         sample.setText(clubId);
 

@@ -12,15 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.makeramen.roundedimageview.RoundedImageView;
 import com.mit_muzaffarpur.R;
 import com.squareup.picasso.Picasso;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
 @Keep
 public class MembersAdapter extends FirebaseRecyclerAdapter<MemberModel, MembersAdapter.MemberViewHolder> {
-
-    public MembersAdapter(@NonNull FirebaseRecyclerOptions<MemberModel> options) {
+    public MembersAdapter(@NonNull FirebaseRecyclerOptions<MemberModel> options , String clubImage) {
         super(options);
     }
 
@@ -28,12 +26,9 @@ public class MembersAdapter extends FirebaseRecyclerAdapter<MemberModel, Members
     protected void onBindViewHolder(@NonNull MemberViewHolder holder, int position, @NonNull MemberModel model) {
 
 
-        holder.Designation.setText(model.getMemberDesignation());
-//        holder.Department.setText(model.getMemberDepartment());
-        holder.Attendance.setText(model.getMemberAttendance());
-        holder.Name.setText(model.getMemberName());
-
-        Picasso.get().load(model.getMemberImage()).placeholder(R.drawable.image_placeholder).into(holder.Image);
+        holder.Designation.setText(model.getDesignation());
+        holder.Name.setText(model.getName());
+        Picasso.get().load(model.getImage()).placeholder(R.drawable.placeholder_person).into(holder.image);
 
 
     }
@@ -49,17 +44,15 @@ public class MembersAdapter extends FirebaseRecyclerAdapter<MemberModel, Members
 
     public class MemberViewHolder extends RecyclerView.ViewHolder {
 
-        TextView Attendance,Department,Designation,Name;
-        CircleImageView Image;
+        TextView Designation,Name;
+        RoundedImageView  image;
         public MemberViewHolder(@NonNull View itemView) {
             super(itemView);
 
-
-            Attendance = itemView.findViewById(R.id.Attendance);
 //            Department = itemView.findViewById(R.id.Department);
-            Designation = itemView.findViewById(R.id.Designation);
+            Designation = itemView.findViewById(R.id.designation);
             Name = itemView.findViewById(R.id.Name);
-            Image  = itemView.findViewById(R.id.Image);
+            image  = itemView.findViewById(R.id.image);
 
         }
     }

@@ -34,6 +34,7 @@ public class MemberCategoryFragment extends Fragment {
         Bundle arguments = getArguments();
         String clubId = arguments.getString("string_key");
         String memberType = arguments.getString("member_type");
+        String clubImage = arguments.getString("clubImage");
 
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
@@ -50,7 +51,7 @@ public class MemberCategoryFragment extends Fragment {
                                 MemberModel.class).build();
 
 
-        membersAdapter = new MembersAdapter(options);
+        membersAdapter = new MembersAdapter(options , clubImage);
         recyclerViewMembers.setAdapter(membersAdapter);
 
         return rootView;
