@@ -26,6 +26,7 @@ import com.mit_muzaffarpur.HomeFragmentElements.Notify.Notify_Model;
 import com.mit_muzaffarpur.LoginSignup.LoginActivity;
 import com.mit_muzaffarpur.LoginSignup.StartActivity;
 import com.mit_muzaffarpur.R;
+import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +43,8 @@ public class HomeFragment extends Fragment {
     List<Club_Cell_Model> clubList;
     RecyclerView recyclerView_notify;
     Button logout;
+
+
 
     @Nullable
     @Override
@@ -79,6 +82,11 @@ public class HomeFragment extends Fragment {
 //        TextView hey = rootView.findViewById(R.id.hey);
 //        String first_name = "Priyam";
 //        hey.setText("Hey," + "\n" + first_name + "!" );
+
+
+
+
+
 
         /**
          * Notification adapter
