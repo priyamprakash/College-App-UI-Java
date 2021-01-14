@@ -30,10 +30,14 @@ import com.squareup.picasso.Picasso;
 @Keep
 public class EventsAdapter extends FirebaseRecyclerAdapter<EventModel, EventsAdapter.EventViewHolder> {
     int a = 0;
+    String status = "" , clubName= "";
 
-    public EventsAdapter(@NonNull FirebaseRecyclerOptions<EventModel> options, int image) {
+    public EventsAdapter(@NonNull FirebaseRecyclerOptions<EventModel> options, int image, String clubName , String status) {
         super(options);
-        a = image;
+        this.a = image;
+        this.status = status;
+        this.clubName=  clubName;
+        Log.d("EventsAdapter", "EventsAdapter: " + clubName);
     }
 
     @Override
@@ -41,6 +45,7 @@ public class EventsAdapter extends FirebaseRecyclerAdapter<EventModel, EventsAda
 
         holder.title.setText(model.getTitle());
         Picasso.get().load(model.getImage()).placeholder(R.drawable.placeholder_image).into(holder.image);
+
 
         holder.event_card.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +56,11 @@ public class EventsAdapter extends FirebaseRecyclerAdapter<EventModel, EventsAda
                 Intent intent = new Intent(view.getContext(), EventProfileActivity.class);
                 intent.putExtra("image", model.getImage());
                 intent.putExtra("title", model.getTitle());
+                intent.putExtra("description", model.getDescription());
+// --------------------
+                intent.putExtra("clubName", clubName);
+                intent.putExtra("status", status);
+
 
 
 
@@ -69,11 +79,6 @@ public class EventsAdapter extends FirebaseRecyclerAdapter<EventModel, EventsAda
         });
 
 
-
-        Log.d("TAG", "onBindViewHolder: " + a);
-        String s = "";
-        s= s+ model.getTitle() + "\n";
-        Log.d("TAG", "onClick: " +  s);
         setScaleAnimation(holder.itemView);
 
     }

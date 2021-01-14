@@ -43,7 +43,7 @@ public class ClubActivity extends AppCompatActivity {
 
 //getting intent values from clubAdapter
 
-        String clubName = getIntent().getStringExtra("clubName");
+        final String clubName = getIntent().getStringExtra("clubName");
         final String clubImage = getIntent().getStringExtra("clubImage");
         final String clubId = getIntent().getStringExtra("clubId");
         String clubTagline = getIntent().getStringExtra("clubTagline");
@@ -135,6 +135,7 @@ public class ClubActivity extends AppCompatActivity {
 //                sharing the clubID
                 SharedPreferences.Editor editor = getSharedPreferences("PREFS", MODE_PRIVATE).edit();
                 editor.putString("clubId", clubId);
+                editor.putString("clubName", clubName);
                 editor.putString("clubImage",clubImage);
                 editor.apply();
 
