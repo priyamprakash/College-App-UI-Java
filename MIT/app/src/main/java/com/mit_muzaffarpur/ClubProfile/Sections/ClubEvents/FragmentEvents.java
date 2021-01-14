@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import android.widget.FrameLayout;
 import com.google.android.material.tabs.TabLayout;
 import com.mit_muzaffarpur.R;
 
+import static android.content.ContentValues.TAG;
 import static android.content.Context.MODE_PRIVATE;
 import static java.lang.Thread.sleep;
 
@@ -26,7 +28,7 @@ public class FragmentEvents extends Fragment {
     Fragment fragment = null;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
-    String clubId ;
+    String clubId , clubName;
     String event_status = "held";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,6 +36,8 @@ public class FragmentEvents extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_events, container, false);
         SharedPreferences prefs = getContext().getSharedPreferences("PREFS", MODE_PRIVATE);
         clubId = prefs.getString("clubId", "none");
+        clubName = prefs.getString("clubName", "none");
+        Log.d("FragmentEvents", "onCreateView: " +  clubName);
 
         tabLayout=(TabLayout)rootView.findViewById(R.id.tabLayout);
         frameLayout=(FrameLayout)rootView.findViewById(R.id.frameLayout);
@@ -45,7 +49,7 @@ public class FragmentEvents extends Fragment {
         Bundle arguments = new Bundle();
         arguments.putString( "string_key" , clubId);
         arguments.putString("event_status" ,  event_status);
-
+        arguments.putString( "club_name" , clubName);
         fragment.setArguments(arguments);
 
         fragmentTransaction.replace(R.id.frameLayout, fragment);
@@ -84,6 +88,7 @@ public class FragmentEvents extends Fragment {
 
                 Bundle arguments = new Bundle();
                 arguments.putString( "string_key" , clubId);
+                arguments.putString( "club_name" , clubName);
                 arguments.putString("event_status" ,  event_status);
 
                 fragment.setArguments(arguments);

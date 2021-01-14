@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.mit_muzaffarpur.ClubProfile.Sections.Members.MemberModel;
 import com.mit_muzaffarpur.ClubProfile.Sections.Members.MembersAdapter;
 import com.mit_muzaffarpur.R;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Common fragment for all types of club Events
@@ -35,7 +38,9 @@ public class EventCategoryFragment extends Fragment {
 
         Bundle arguments = getArguments();
         String clubId = arguments.getString("string_key");
+        String clubName = arguments.getString("club_name");
         String event_status =arguments.getString("event_status");
+        Log.d("EventCategoryFragment", "onCreateView: " + clubName + event_status);
 
 
 //        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
@@ -58,7 +63,7 @@ public class EventCategoryFragment extends Fragment {
                                 EventModel.class).build();
 
 
-        eventsAdapter = new EventsAdapter(options, 1);
+        eventsAdapter = new EventsAdapter(options, 1 , clubName , event_status );
         recyclerViewEvents.setAdapter(eventsAdapter);
 
         return  rootView;
