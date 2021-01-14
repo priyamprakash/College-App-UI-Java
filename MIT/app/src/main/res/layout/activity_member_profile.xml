@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/neomorph_background_color"
+    android:id="@+id/member_card"
+    tools:context=".ClubProfile.Sections.Members.MemberProfileActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:cardCornerRadius="6dp">
+
+        <ImageView
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="@drawable/bg_profile"
+            />
+        <View
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/colorPrimaryDark"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layoutAnimation="@anim/layout_animation"
+            android:orientation="vertical">
+
+            <!--                        android:layoutAnimation="@anim/layout_animation"
+            -->
+
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/image"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="50dp"
+                android:scaleType="fitXY"
+                android:transitionName="imageTransition"
+                app:riv_corner_radius="12dp"
+                app:riv_oval="true"/>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:autoLink="email"
+                    android:fontFamily="@font/rubik_bold"
+                    android:maxLines="1"
+                    android:shadowColor="@color/colorPrimaryDark"
+                    android:shadowDx="20"
+                    android:shadowDy="10"
+                    android:shadowRadius="4"
+                    android:text="Priyam Prakash"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:textSize="25sp"
+                    android:transitionName="nameTransition" />
+
+                <TextView
+                    android:id="@+id/position"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:elevation="15dp"
+                    android:fontFamily="@font/normal"
+                    android:text="position"
+                    android:textAllCaps="true"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+                    android:textSize="16sp"
+                    android:transitionName="positionTransition" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <com.chinodev.androidneomorphframelayout.NeomorphFrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:neomorph_corner_radius="16dp"
+        app:neomorph_elevation="7dp"
+        app:neomorph_highlight_color="@color/neomorph_highlight_color"
+        app:neomorph_shadow_color="@color/neomorph_shadow_color"
+        app:neomorph_shadow_type="outer"
+        app:neomorph_view_type="rectangular">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/layout">
+                    <TextView
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginVertical="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textSize="18dp"
+                        android:textAlignment="textStart"
+                        android:fontFamily="@font/bold"
+                        android:id="@+id/name"
+                        />
+                    <ImageView
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginVertical="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@drawable/dotted"
+                        />
+
+
+
+                        <TextView
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/designation"
+                            android:fontFamily="@font/normal"
+                            android:maxLines="4"
+                            android:text="designation"
+                            />
+
+                        <TextView
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/department"
+                            android:fontFamily="@font/normal"
+                            android:maxLines="4"
+                            android:text="department"
+                            />
+
+
+
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
+
+</LinearLayout>
+
+
+
+</ScrollView>

@@ -7,12 +7,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.transition.Fade;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
+import com.mit_muzaffarpur.ClubProfile.ClubActivity;
 import com.mit_muzaffarpur.R;
 
 /**
@@ -42,6 +44,15 @@ public class MemberCategoryFragment extends Fragment {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
         recyclerViewMembers.setLayoutManager(linearLayoutManager);
+
+//        to stop dhak - dhak state in the status bar
+        Fade fade = new Fade();
+        View decor = getActivity().getWindow().getDecorView();
+        fade.excludeTarget(decor.findViewById(R.id.action_bar_container), true);
+        fade.excludeTarget(android.R.id.statusBarBackground, true);
+        fade.excludeTarget(android.R.id.navigationBarBackground, true);
+        getActivity().getWindow().setEnterTransition(fade);
+        getActivity().getWindow().setExitTransition(fade);
 
 
         FirebaseRecyclerOptions<MemberModel> options =

@@ -14,7 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Dashboard.Gallery.Gallery"></activity>
+        <activity android:name=".ClubProfile.Sections.ClubEvents.EventProfileActivity"></activity>
+        <activity android:name=".ClubProfile.Sections.Members.MemberProfileActivity" />
+        <activity android:name=".Dashboard.Gallery.Gallery" />
         <activity android:name=".Dashboard.Alumni.Alumni" />
         <activity android:name=".LoginSignup.RegisterActivity" />
         <activity android:name=".LoginSignup.LoginActivity" />

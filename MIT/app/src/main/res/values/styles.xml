@@ -8,6 +8,8 @@
         <item name="android:textColorHint">@color/colorPrimaryDark</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
         <item name="android:textColorPrimary">@android:color/white</item>
+<!--        Enabling the Window Activity Transition-->
+        <item name="android:windowActivityTransitions">true</item>
     </style>
     <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="color">@android:color/white</item>
