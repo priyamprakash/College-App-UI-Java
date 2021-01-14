@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/member_card"
     android:orientation="vertical">
 
 
     <androidx.cardview.widget.CardView
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:cardCornerRadius="6dp">
 
+        <!--        android:layoutAnimation="@anim/layout_animation"-->
 
 
         <LinearLayout
@@ -29,7 +30,7 @@
                 android:layout_centerHorizontal="true"
                 android:background="@color/white"
                 android:elevation="15dp"
-                app:neomorph_background_color="@color/neomorph_background_color"
+                app:neomorph_background_color="@color/white"
                 app:neomorph_highlight_color="@color/neomorph_shadow_color"
                 app:neomorph_shadow_color="#817A7A"
                 app:neomorph_shadow_type="outer"
@@ -42,7 +43,7 @@
                             android:layout_height="100dp"
                             android:scaleType="fitXY"
                             app:riv_corner_radius="10dp"
-                            />
+                          android:transitionName="imageTransition" />
 
             </com.chinodev.androidneomorphframelayout.NeomorphFrameLayout>
 
@@ -68,20 +69,23 @@
                     android:shadowColor="@color/text_shadow"
                     android:shadowDx="20"
                     android:shadowDy="10"
-                    android:shadowRadius="4"/>
+                    android:shadowRadius="4"
+
+                    android:transitionName="nameTransition"/>
 
                 <TextView
-                    android:id="@+id/designation"
+                    android:id="@+id/position"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:layout_marginEnd="10dp"
                     android:fontFamily="@font/normal"
-                    android:text="designation"
+                    android:text="position"
                     android:elevation="15dp"
                     android:textAlignment="viewEnd"
                     android:textColor="#000"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:transitionName="positionTransition"/>
 
 
             </LinearLayout>

@@ -6,6 +6,7 @@ import androidx.annotation.Keep;
 /**
  * Common model for club notifications , achievements , announcements
  */
+
 @Keep
 public class Model {
     public String date;

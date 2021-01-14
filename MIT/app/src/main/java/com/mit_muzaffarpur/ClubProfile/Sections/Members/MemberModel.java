@@ -13,7 +13,9 @@ public class MemberModel {
     public String points;
     public String image;
     public String qualification;
+    public String position;
     public String status;
+
 
     @Override
     public String toString() {
@@ -27,6 +29,7 @@ public class MemberModel {
                 ", points='" + points + '\'' +
                 ", image='" + image + '\'' +
                 ", qualification='" + qualification + '\'' +
+                ", position='" + position + '\'' +
                 ", status='" + status + '\'' +
                 '}';
     }
@@ -101,6 +104,14 @@ public class MemberModel {
 
     public void setQualification(String qualification) {
         this.qualification = qualification;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public String getStatus() {

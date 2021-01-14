@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="15dp"
     android:padding="5dp"
+    android:id="@+id/event_card"
     android:orientation="vertical">
 
 
@@ -16,7 +17,8 @@
         android:scaleType="fitXY"
         android:src="@drawable/mit_pic"
         app:riv_corner_radius_top_left="12dp"
-        app:riv_corner_radius_top_right="12dp"/>
+        app:riv_corner_radius_top_right="12dp"
+        android:transitionName="imageTransition"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,7 +43,8 @@
                android:maxLines="1"
                android:textAllCaps="true"
                android:textColor="@color/white"
-               android:textSize="14dp" />
+               android:textSize="14dp"
+               android:transitionName="titleTransition"/>
        </HorizontalScrollView>
 
 
