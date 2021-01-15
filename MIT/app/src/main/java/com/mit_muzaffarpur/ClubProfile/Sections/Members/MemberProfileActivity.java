@@ -36,6 +36,7 @@ public class MemberProfileActivity extends AppCompatActivity {
         String n = getIntent().getStringExtra("name");
         String d = getIntent().getStringExtra("position");
 
+
         Picasso.get().load(i).placeholder(R.drawable.placeholder_person).into(image);
         Name.setText(n);
         position.setText(d);

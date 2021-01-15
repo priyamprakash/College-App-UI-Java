@@ -1,14 +1,8 @@
 package com.mit_muzaffarpur.LoginSignup;
 
-import androidx.annotation.Keep;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -18,6 +12,11 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.Keep;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -39,6 +38,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mit_muzaffarpur.Home.MainActivity;
 import com.mit_muzaffarpur.R;
+
+import java.util.Objects;
 
 @Keep
 public class LoginActivity extends AppCompatActivity {
@@ -125,7 +126,7 @@ public class LoginActivity extends AppCompatActivity {
                                     if(task.isSuccessful())
                                     {
                                         DatabaseReference reference= FirebaseDatabase.getInstance().getReference().child("Users")
-                                                .child(auth.getCurrentUser().getUid());
+                                                .child(Objects.requireNonNull(auth.getCurrentUser()).getUid());
 
                                         reference.addValueEventListener(new ValueEventListener() {
                                             @Override

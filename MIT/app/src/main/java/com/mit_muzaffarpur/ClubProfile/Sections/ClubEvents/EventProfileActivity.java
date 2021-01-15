@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,9 +23,10 @@ public class EventProfileActivity extends AppCompatActivity {
     final String TAG = "EventProfileActivity";
     RoundedImageView image;
     ImageView blur;
-    TextView title ,clubName ,  status , description;
+    TextView title, clubName, status, description;
 
     BlurView blurView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +40,7 @@ public class EventProfileActivity extends AppCompatActivity {
         status = findViewById(R.id.status);
         clubName = findViewById(R.id.club_name);
 
-        CircleImageView indicator =  findViewById(R.id.indicator);
+        CircleImageView indicator = findViewById(R.id.indicator);
         indicator.setVisibility(View.INVISIBLE);
 
         String i = getIntent().getStringExtra("image");
@@ -49,19 +51,17 @@ public class EventProfileActivity extends AppCompatActivity {
         String status1 = getIntent().getStringExtra("status");
 
 
-
         Picasso.get().load(i).placeholder(R.drawable.placeholder_person).into(blur);
         Picasso.get().load(i).placeholder(R.drawable.placeholder_person).into(image);
         title.setText(t);
         Log.d("EventProfileActivity", "onCreate: " + clubName1);
-        clubName.setText("Organised by : " +clubName1);
-        description.setText("Description : " + desc + "\n");
-        status.setText("Status : " + status1.substring(0,1).toUpperCase() + status1.substring(1).toLowerCase());
-        if(status1.equalsIgnoreCase("ongoing"))
-        {
+        clubName.setText("Organised by : " + clubName1);
+        SpannableStringBuilder builder = new SpannableStringBuilder(desc);
+        description.setText("Description : " + builder.toString() + "\n");
+        status.setText("Status : " + status1.substring(0, 1).toUpperCase() + status1.substring(1).toLowerCase());
+        if (status1.equalsIgnoreCase("ongoing")) {
             indicator.setVisibility(View.VISIBLE);
-        }
-        else{
+        } else {
             indicator.setVisibility(View.INVISIBLE);
 
         }
@@ -72,21 +72,22 @@ public class EventProfileActivity extends AppCompatActivity {
 
 
     }
-  private void blurBackground(){
-      float radius = 20f;
 
-      View decorView = getWindow().getDecorView();
-      ViewGroup rootView = (ViewGroup) decorView.findViewById(android.R.id.content);
+    private void blurBackground() {
+        float radius = 20f;
 
-      Drawable windowBackground = decorView.getBackground();
+        View decorView = getWindow().getDecorView();
+        ViewGroup rootView = (ViewGroup) decorView.findViewById(android.R.id.content);
 
-      blurView.setupWith(rootView)
-              .setFrameClearDrawable(windowBackground)
-              .setBlurAlgorithm(new RenderScriptBlur(this))
-              .setBlurRadius(radius)
-              .setBlurAutoUpdate(true)
-              .setHasFixedTransformationMatrix(true);
-  }
+        Drawable windowBackground = decorView.getBackground();
+
+        blurView.setupWith(rootView)
+                .setFrameClearDrawable(windowBackground)
+                .setBlurAlgorithm(new RenderScriptBlur(this))
+                .setBlurRadius(radius)
+                .setBlurAutoUpdate(true)
+                .setHasFixedTransformationMatrix(true);
+    }
 
 
 }

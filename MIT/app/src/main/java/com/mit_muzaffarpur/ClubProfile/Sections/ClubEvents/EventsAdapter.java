@@ -57,10 +57,10 @@ public class EventsAdapter extends FirebaseRecyclerAdapter<EventModel, EventsAda
                 intent.putExtra("image", model.getImage());
                 intent.putExtra("title", model.getTitle());
                 intent.putExtra("description", model.getDescription());
+                Log.d("EventAdapter", "onClick: " + model.getDescription());
 // --------------------
                 intent.putExtra("clubName", clubName);
                 intent.putExtra("status", status);
-
 
 
 
