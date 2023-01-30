@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "685011434640",
+    "project_id": "college-app-java",
+    "storage_bucket": "college-app-java.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685011434640:android:1a55e82ebc72d47af3ec15",
+        "android_client_info": {
+          "package_name": "com.mit_muzaffarpur"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685011434640-okuhvccp7iv8oit56h88dpuchovimr0m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mit_muzaffarpur",
+            "certificate_hash": "d3452cc3ade3cff50a0ffbf8469c937345159511"
+          }
+        },
+        {
+          "client_id": "685011434640-ikqnfdtlu83uv1jn59m5ah12ns6v26ai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxbw8ZNpeDlExBD56c5aZU45EOfA-cD-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685011434640-ikqnfdtlu83uv1jn59m5ah12ns6v26ai.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
