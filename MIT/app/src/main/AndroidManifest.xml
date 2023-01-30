@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mit_muzaffarpur">
+    package="com.college">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,27 +14,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ClubProfile.Sections.ClubEvents.EventProfileActivity"></activity>
-        <activity android:name=".ClubProfile.Sections.Members.MemberProfileActivity" />
-        <activity android:name=".Dashboard.Gallery.Gallery" />
-        <activity android:name=".Dashboard.Alumni.Alumni" />
-        <activity android:name=".LoginSignup.RegisterActivity" />
-        <activity android:name=".LoginSignup.LoginActivity" />
-        <activity android:name=".LoginSignup.StartActivity">
+        <activity android:name="com.college.ClubProfile.Sections.ClubEvents.EventProfileActivity"></activity>
+        <activity android:name="com.college.ClubProfile.Sections.Members.MemberProfileActivity" />
+        <activity android:name="com.college.Dashboard.Gallery.Gallery" />
+        <activity android:name="com.college.Dashboard.Alumni.Alumni" />
+        <activity android:name="com.college.LoginSignup.RegisterActivity" />
+        <activity android:name="com.college.LoginSignup.LoginActivity" />
+        <activity android:name="com.college.LoginSignup.StartActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Dashboard.AppInfo" />
-        <activity android:name=".ClubProfile.ClubActivity" />
-        <activity android:name=".Home.MainActivity" />
-        <activity android:name=".Dashboard.DepartmentActivity" />
-        <activity android:name=".Dashboard.Website" />
-        <activity android:name=".Dashboard.About" />
+        <activity android:name="com.college.Dashboard.AppInfo" />
+        <activity android:name="com.college.ClubProfile.ClubActivity" />
+        <activity android:name="com.college.Home.MainActivity" />
+        <activity android:name="com.college.Dashboard.DepartmentActivity" />
+        <activity android:name="com.college.Dashboard.Website" />
+        <activity android:name="com.college.Dashboard.About" />
 
-        <service android:name=".Home.MyMessagingService">
+        <service android:name="com.college.Home.MyMessagingService"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAING_EVENT" />
             </intent-filter>
