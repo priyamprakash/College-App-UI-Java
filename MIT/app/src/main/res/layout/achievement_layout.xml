@@ -3,26 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:orientation="vertical"
-    android:padding="10dp">
+    android:background="@color/light_font"
+    android:orientation="vertical">
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_marginHorizontal="4dp"
         android:background="@color/white"
         android:padding="2dp"
+        android:elevation="6dp"
         app:cardCornerRadius="16dp">
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@color/white"
-        app:cardCornerRadius="16dp">
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,7 +28,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:fontFamily="@font/rubik_bold"
                 android:text="Title"
                 android:layout_marginVertical="2dp"
                 android:textColor="@color/colorPrimaryDark"
@@ -57,7 +48,7 @@
                 android:layout_marginVertical="2dp"
                 android:text="5 Jan"
                 android:layout_marginHorizontal="5dp"
-                android:textSize="12dp" />
+                android:textSize="12sp" />
             <me.biubiubiu.justifytext.library.JustifyTextView
                 android:id="@+id/message"
                 android:layout_width="wrap_content"
@@ -66,9 +57,9 @@
                 android:layout_marginVertical="2dp"
                 android:layout_marginStart="5dp"
                 android:fontFamily="@font/normal"
-                android:text="Description of the alumniModel is to be provided here through firebase recycler adapter .\n"
+                android:text="@string/description_of_the_alumnimodel_is_to_be_provided_here_through_firebase_recycler_adapter_n"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
             <TextView
                 android:id="@+id/click"
                 android:visibility="gone"
@@ -83,7 +74,6 @@
 
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
 
 

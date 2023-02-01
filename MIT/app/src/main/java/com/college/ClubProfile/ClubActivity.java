@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -41,7 +42,7 @@ public class ClubActivity extends AppCompatActivity {
         final String clubImage = getIntent().getStringExtra("clubImage");
         final String clubId = getIntent().getStringExtra("clubId");
         String clubTagline = getIntent().getStringExtra("clubTagline");
-
+        Log.d(TAG, "onCreate: Club Activity" + clubId);
         String clubDescription = getIntent().getStringExtra("clubDescription");
         final String fbLink = getIntent().getStringExtra("fb");
         String instaLink = getIntent().getStringExtra("insta");
@@ -130,7 +131,7 @@ public class ClubActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = getSharedPreferences("PREFS", MODE_PRIVATE).edit();
                 editor.putString("clubId", clubId);
                 editor.putString("clubName", clubName);
-                editor.putString("clubImage",clubImage);
+                editor.putString("clubImage", clubImage);
                 editor.apply();
 
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -150,17 +151,28 @@ public class ClubActivity extends AppCompatActivity {
         });
 
 
-
-
     }
 
     /**
      * Floating Action Button
+     *
      * @param view
      */
     public void contact(View view) {
         Toast.makeText(getApplicationContext(), "Idhr se email se connect kr denge",
                 Toast.LENGTH_LONG).show();
+    }
+
+    //to start
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    //to stop
+    @Override
+    public void onStop() {
+        super.onStop();
     }
 
 

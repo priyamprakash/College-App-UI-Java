@@ -32,8 +32,7 @@ public class ClubAdapter extends FirebaseRecyclerAdapter<ClubModel, ClubAdapter.
                                     @NonNull final ClubModel clubModel)
     {
 
-        Log.d(TAG, "onBindViewHolder: clubName  " + "Hello");
-        Log.d(TAG, "onBindViewHolder: clubName  " + clubModel.getClubName());
+        Log.d(TAG, "onBindViewHolder: clubName  " + clubModel.toString());
         Picasso.get().load(clubModel.getClubImage()).placeholder(R.drawable.image_placeholder).into(holder.clubImage);
         holder.clubName.setText(clubModel.getClubName());
 
@@ -51,6 +50,7 @@ public class ClubAdapter extends FirebaseRecyclerAdapter<ClubModel, ClubAdapter.
                 intent.putExtra("insta",clubModel.getClubInstaLink());
                 intent.putExtra("linkedin",clubModel.getClubLinkedinLink());
                 intent.putExtra("youtube",clubModel.getClubYoutubeLink());
+                Log.d(TAG, "onCreate: Club Activity" + clubModel.getClubId());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 view.getContext().startActivity(intent);
 
